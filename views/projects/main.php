@@ -1,4 +1,9 @@
-<p>Hello there <?php echo $projects[0]->Project_ID; ?>!<p>
+<p>List of projects:
+    <?php
+    foreach ($projects as $project)
+        echo 'Project: ' . $project->Project_ID . ' : ' . $project->Project_Title . "\n";
+    ?>
+<p>
 
     
   
