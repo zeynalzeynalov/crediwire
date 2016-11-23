@@ -6,7 +6,7 @@
       
         $projects = Project::all();
 
-      
+      echo '------>'.count($projects);
       require_once('views/projects/main.php');
     }
 
