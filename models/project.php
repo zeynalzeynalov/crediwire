@@ -18,6 +18,8 @@
       while ($row = pg_fetch_row($result))
       {
           $projectList[] = new Project($row[0]);
+        
+        echo $row[1];
       }
 
       
