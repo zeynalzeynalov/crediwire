@@ -21,7 +21,8 @@
   {
         $projectList = [];
         $dbconn = dbConnection::connectToDB();
-	$query_select = 'SELECT "Project_Execution_Record_ID", "Starting_Time_Stamp", "End_Time_Stamps", "Is_Completed", "Project_ID" FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = $projectID ORDER BY "Project_Execution_Record_ID" ASC;';
+	  
+	$query_select = sprintf('SELECT "Project_Execution_Record_ID", "Starting_Time_Stamp", "End_Time_Stamps", "Is_Completed", "Project_ID" FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
         
 	echo $query_select;
 	  
