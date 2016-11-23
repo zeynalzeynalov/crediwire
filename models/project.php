@@ -2,10 +2,10 @@
   class Project {
     // we define 3 attributes
     // they are public so that we can access them using $post->author directly
-    public $id;
+    public $Project_ID;
 
-    public function __construct($id) {
-      $this->Project_ID      = $id;
+    public function __construct($Project_ID) {
+      $this->Project_ID      = $Project_ID;
     }
 
     public static function all() {
