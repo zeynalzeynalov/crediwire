@@ -1,4 +1,4 @@
-<p>Hello there <?php echo $projects[0]['Project_ID']; ?>!<p>
+<p>Hello there <?php echo $projects[0]->Project_ID; ?>!<p>
 
     
   
