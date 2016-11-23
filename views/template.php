@@ -26,9 +26,15 @@
                 document.getElementById("txtHint" + js_project_id).innerHTML = this.responseText;
               
                 if(document.getElementById("btnAjax_" + js_project_id).value == "Start working")
+                {
                   document.getElementById("btnAjax_" + js_project_id).value = "Stop working";
+                  document.getElementById("btnAjax_" + js_project_id).className = "btn btn-danger";
+                }
                 else
-                  document.getElementById("btnAjax_" + js_project_id).value = "Start working"
+                {
+                  document.getElementById("btnAjax_" + js_project_id).value = "Start working";
+                  document.getElementById("btnAjax_" + js_project_id).className = "btn btn-success"; 
+                }
             }
         };
         //alert("includes/recordprojecttime.php?project_id=" + js_project_id + "&action=" + js_action);
