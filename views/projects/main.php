@@ -11,6 +11,8 @@
     
     
     ?>
+
+    <input class="btn btn-success" type="text" value="Submit" onkeyup="showHint(this.value)">
     <button type="button" class="btn btn-success">Start stopwatch</button>
     <button type="button" class="btn btn-danger">Stop stopwatch</button>
   </div>
