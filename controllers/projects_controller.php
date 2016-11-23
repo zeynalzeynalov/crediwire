@@ -4,9 +4,8 @@
       $first_name = 'Jon';
       $last_name  = 'Snow';
       
-        $projects = Project::all();
-
-      echo '------>'.count($projects);
+      $projects = Project::all();
+      
       require_once('views/projects/main.php');
     }
 
@@ -14,9 +13,6 @@
       require_once('views/projects/error.php');
     }
     
-    
-   
-
     public function show() {
       // we expect a url of form ?controller=posts&action=show&id=x
       // without an id we just redirect to the error page as we need the post id to find it in the database
