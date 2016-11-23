@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <script>
-    function showHint(str) {
-    if (str.length == 0) { 
+    function showHint(js_project_id,js_action) {
+    if (js_project_id.length == 0) { 
         document.getElementById("txtHint").innerHTML = "";
         return;
     } else {
@@ -22,7 +22,7 @@
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "recordprojecttime.php?project_id=" + str, true);
+        xmlhttp.open("GET", "recordprojecttime.php?project_id=" + js_project_id + "&action=getProjectTimeRecords" + js_action, true);
         xmlhttp.send();
     }
     }
@@ -63,8 +63,10 @@
     <header>
       <a href='/php_mvc_blog'>Home</a>
     </header>
-
-    <?php require_once(dirname(dirname(__FILE__)).'/includes/starter.php'); ?>
+    <form> 
+      <?php require_once(dirname(dirname(__FILE__)).'/includes/starter.php'); ?>
+    </form>
+    
 
     <footer>
       CrediWire coding assignment. [Zeynal Zeynalov]
