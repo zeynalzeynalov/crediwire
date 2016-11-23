@@ -3,7 +3,7 @@
     public function home() {
       $first_name = 'Jon';
       $last_name  = 'Snow';
-      require_once('views/projects/home.php');
+      require_once('views/projects/main.php');
     }
 
     public function error() {
