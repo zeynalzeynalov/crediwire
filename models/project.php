@@ -22,10 +22,9 @@
  $results = pg_query($con,'SELECT * FROM public."Project" ORDER BY "Project_ID" ASC') or die('Query failed: ' . pg_last_error());
  
       echo '------>'.count( $results );
-      while ($row = pg_fetch_row($results))
+      while ($row = pg_fetch_assoc($results))
       {
           $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Slug'], $row['Project_Created_Date']);
-        echo $row['Project_Title'];
       }
 
       
