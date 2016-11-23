@@ -14,12 +14,13 @@
     {
        $this->$Starting_Time_Stamp = $Starting_Time_Stamp;
        $this->$End_Time_Stamps = $End_Time_Stamps;
+	    echo "I am here.....!";
     }
   }
 
   function getProjectTimeRecords($projectID)
   {
-        $projectList = [];
+        $recordList = [];
         $dbconn = dbConnection::connectToDB();
 	  
 	$query_select = sprintf('SELECT "Project_Execution_Record_ID", "Starting_Time_Stamp", "End_Time_Stamps", "Is_Completed", "Project_ID" FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
@@ -29,10 +30,10 @@
 	$results = pg_query($dbconn,$query_select) or die('Query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
-          $projectList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['End_Time_Stamps']);
+          $recordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['End_Time_Stamps']);
 	  
-	  echo count ($projectList).'---';
-        return $projectList;
+	  echo count ($recordList).'---';
+        return $recordList;
   }
 
   function startTimeRecord($projectID)
