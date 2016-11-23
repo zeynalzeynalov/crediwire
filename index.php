@@ -14,6 +14,4 @@
     }
 
     require_once('views/template.php');
-  
-    echo "index.php Hello!<br>";
 ?>
