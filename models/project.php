@@ -24,7 +24,7 @@
       echo '------>'.count( $results );
       while ($row = pg_fetch_row($results))
       {
-          $projectList[] = new Project($row[Project_ID], $row[Project_Title], $row[Project_Slug], $row[Project_Created_Date]);
+          $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Slug'], $row['Project_Created_Date']);
       }
 
       
