@@ -3,9 +3,16 @@
     // we define 3 attributes
     // they are public so that we can access them using $post->author directly
     public $Project_ID;
+    public $Project_Title;
+    public $Project_Slug;
+    public $Project_Created_Date;
 
-    public function __construct($Project_ID) {
-      $this->Project_ID      = $Project_ID;
+    public function __construct($Project_ID,$Project_Title,$Project_Slug,$Project_Created_Date)
+    {
+      $this->Project_ID = $Project_ID;
+      $this->Project_Title = $Project_Title;
+      $this->Project_Slug = $Project_Slug;
+      $this->Project_Created_Date = $Project_Created_Date;
     }
 
     public static function all() {
@@ -17,9 +24,7 @@
       echo '------>'.count( $results );
       while ($row = pg_fetch_row($results))
       {
-          $projectList[] = new Project($row[0]);
-        
-        echo '*';
+          $projectList[] = new Project($row[Project_ID], $row[Project_Title], $row[Project_Slug], $row[Project_Created_Date]);
       }
 
       
