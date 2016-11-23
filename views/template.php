@@ -12,6 +12,11 @@
 
     <script>
     function showHint(js_project_id,js_action) {
+    
+    var tmp_js_project_id = js_project_id.split('_');
+    js_project_id = tmp_js_project_id[1];
+      
+      
     if (js_project_id.length == 0) { 
         document.getElementById("txtHint" + js_project_id).innerHTML = "";
         return;
