@@ -53,7 +53,7 @@
       foreach ($projectRecordList as $r)
         $return_value .= '<span>'.$r->Starting_Time_Stamp.' - '.$r->End_Time_Stamps.'</span>';
         
-      echo $return_value;
+      echo $return_value === "" ? "no suggestion" : $return_value;;
   }
   else
     if( $_REQUEST["action"] == "startTimeRecord")
