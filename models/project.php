@@ -14,12 +14,14 @@
      
  $results = pg_query($con,'SELECT * FROM public."Project" ORDER BY "Project_ID" ASC') or die('Query failed: ' . pg_last_error());
  
-      
+      echo '------>'.count( $results );
       while ($row = pg_fetch_row($result))
       {
           $projectList[] = new Project($row[0]);
       }
 
+      
+      
       return $projectList;
     }
 
