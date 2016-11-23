@@ -5,7 +5,9 @@
  
     function connectToDB()
     {    
-        $dbConnection = pg_connect("host=DB_HOST user=DB_USER password=DB_PASSWORD dbname=DB_NAME") or die ("Could not connect to server\n");;
+        $dbConnection = pg_connect(sprintf("host=%s user=%s password=%s dbname=%s", DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);)
+          
+        or die ("Could not connect to server\n");;
          
         return $dbConnection;
     }
