@@ -22,7 +22,7 @@
                 document.getElementById("txtHint").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "recordprojecttime.php?project_id=" + js_project_id + "&action=getProjectTimeRecords" + js_action, true);
+        xmlhttp.open("GET", "includes/recordprojecttime.php?project_id=" + js_project_id + "&action=getProjectTimeRecords" + js_action, true);
         xmlhttp.send();
     }
     }
