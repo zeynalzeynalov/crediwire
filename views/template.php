@@ -13,13 +13,13 @@
     <script>
     function showHint(js_project_id,js_action) {
     if (js_project_id.length == 0) { 
-        document.getElementById("txtHint").innerHTML = "";
+        document.getElementById("txtHint" + js_project_id).innerHTML = "";
         return;
     } else {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
+                document.getElementById("txtHint" + js_project_id).innerHTML = this.responseText;
             }
         };
         alert("includes/recordprojecttime.php?project_id=" + js_project_id + "&action=" + js_action);
