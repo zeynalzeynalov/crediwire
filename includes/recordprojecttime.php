@@ -3,8 +3,8 @@
 
   $result_string = "";
 
-  require_once('config/configuration.php');
-  require_once('includes/dbconnection.php');
+  require_once(dirname(dirname(__FILE__)).'/config/configuration.php');
+  require_once(dirname(dirname(__FILE__)).'/includes/dbconnection.php');
   
   class Project_Execution_Record {
     public $Starting_Time_Stamp;
