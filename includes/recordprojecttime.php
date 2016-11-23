@@ -21,8 +21,11 @@
   {
         $projectList = [];
         $dbconn = dbConnection::connectToDB();
-        $results = pg_query($con,'SELECT "Project_Execution_Record_ID", "Starting_Time_Stamp", "End_Time_Stamps", "Is_Completed", "Project_ID"
-	FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = $projectID ORDER BY "Project_Execution_Record_ID" ASC;') or die('Query failed: ' . pg_last_error());
+	$query_select = 'SELECT "Project_Execution_Record_ID", "Starting_Time_Stamp", "End_Time_Stamps", "Is_Completed", "Project_ID" FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = $projectID ORDER BY "Project_Execution_Record_ID" ASC;';
+        
+	echo $query_select;
+	  
+	$results = pg_query($con,$query_select) or die('Query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
           $projectList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['End_Time_Stamps']);
