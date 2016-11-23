@@ -13,7 +13,7 @@
         $action     = 'main';
     }
 
-    require_once('views/main.php');
+    require_once('views/template.php');
   
     echo "index.php Hello!<br>";
 ?>
