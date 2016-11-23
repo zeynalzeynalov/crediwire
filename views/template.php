@@ -20,7 +20,7 @@
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("txtHint" + js_project_id).innerHTML = this.responseText;
-                document.getElementById("btnAjax" + js_project_id).text = "STOP";
+                document.getElementById("btnAjax" + js_project_id).value = "STOP";
               
               
             }
