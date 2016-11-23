@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand" href="#"><h3><span class="label label-info">Welcome, Bob!</span>Let's start completing waiting projects!</h3></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,7 +67,7 @@
       </div><!-- /.container-fluid -->
     </nav>
     
-    <h1><span class="label label-info">Welcome, Bob!</span>Let's start completing waiting projects!</h1>
+    
     
     <header>
       <a href='/php_mvc_blog'>Home</a>
