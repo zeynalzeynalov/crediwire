@@ -11,11 +11,8 @@
     public static function all() {
       $projectList = [];
       $con = dbConnection::connectToDB();
-      $req = $con->query();
-
-      
-      $query = 'SELECT * FROM public."Project" ORDER BY "Project_ID" ASC';
- $results = pg_query($con, 'SELECT * FROM posts') or die('Query failed: ' . pg_last_error());
+     
+ $results = pg_query($con,'SELECT * FROM public."Project" ORDER BY "Project_ID" ASC') or die('Query failed: ' . pg_last_error());
  
       
       while ($row = pg_fetch_row($result))
