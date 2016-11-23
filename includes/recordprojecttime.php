@@ -17,7 +17,7 @@
     }
   }
 
-  public static function getProjectTimeRecords($projectID)
+  function getProjectTimeRecords($projectID)
   {
         $projectList = [];
         $dbconn = dbConnection::connectToDB();
@@ -29,7 +29,7 @@
         return $projectList;
   }
 
-  public static function startTimeRecord($projectID)
+  function startTimeRecord($projectID)
   {
       $dbconn = dbConnection::connectToDB();
       $insert_result = pg_query($dbconn, 'INSERT INTO public."Project_Execution_Record" ("Project_Execution_Record_ID", "Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (0, now(), FALSE, $projectID);'");
