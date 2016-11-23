@@ -19,7 +19,7 @@
       {
           $projectList[] = new Project($row[0]);
         
-        echo $row[1];
+        echo '*';
       }
 
       
