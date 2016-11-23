@@ -26,7 +26,7 @@ ON P."Project_ID" = TMP."Project_ID"
 ORDER BY P."Project_ID" ASC') or die('Query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
-          $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Slug'], $row['Project_Created_Date']);
+          $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Slug'], $row['Project_Created_Date'],$row['Project_Open_Record_Count'] > 0 ? "Stop working" : "Start working");
 
         return $projectList;
     }
