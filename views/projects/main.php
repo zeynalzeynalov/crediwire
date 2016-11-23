@@ -12,7 +12,7 @@
     
     ?>
 
-    <input class="btn btn-success" type="button" value="<?= $project->Project_ID ?>" onclick="showHint(this.value, 'getProjectTimeRecords')">
+    <input class="btn btn-success" type="button" id="btnAjax<?= $project->Project_ID ?>" value="<?= $project->Project_ID ?>" onclick="showHint(this.value, 'getProjectTimeRecords')">
     
     <p>Suggestions: <span id="txtHint<?= $project->Project_ID ?>"></span></p>
     <button type="button" class="btn btn-success">Start stopwatch</button>
