@@ -12,7 +12,7 @@
     
     ?>
 
-    <input class="btn btn-success" type="text" value="Submit" onkeyup="showHint(this.value)">
+    <input class="btn btn-success" type="submit" value="<?= $project->Project_ID ?>" onkeyup="showHint(this.value, 'getProjectTimeRecords')">
     
     <p>Suggestions: <span id="txtHint"></span></p>
     <button type="button" class="btn btn-success">Start stopwatch</button>
