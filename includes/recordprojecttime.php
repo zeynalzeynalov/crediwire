@@ -51,6 +51,8 @@
       
       $return_value = "";
       
+	  echo $projectRecordList[0]->Starting_Time_Stamp;
+	  
       foreach ($projectRecordList as $r)
         $return_value .= '<span>'.$r->Starting_Time_Stamp.' - '.$r->End_Time_Stamps.'</span>';
         
