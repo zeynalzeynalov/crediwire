@@ -14,16 +14,16 @@
       $req = $con->query();
 
       
-      $query = 'SELECT * FROM Projects';
+      $query = 'SELECT * FROM public."Project" ORDER BY "Project_ID" ASC';
  $results = pg_query($con, 'SELECT * FROM posts') or die('Query failed: ' . pg_last_error());
  
       
-      // we create a list of Post objects from the database results
-      foreach( $results->fetchAll() as $project) {
-        $projectList[] = new Project($project['Project_ID']);
+      while ($row = pg_fetch_row($result))
+      {
+          $projectList[] = new Project($row[0]);
       }
 
-      return $list;
+      return $projectList;
     }
 
     public static function find($id) {
