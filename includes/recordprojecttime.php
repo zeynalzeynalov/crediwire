@@ -26,7 +26,7 @@
         
 	echo $query_select;
 	  
-	$results = pg_query($con,$query_select) or die('Query failed: ' . pg_last_error());
+	$results = pg_query($dbconn,$query_select) or die('Query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
           $projectList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['End_Time_Stamps']);
