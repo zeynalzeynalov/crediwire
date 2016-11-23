@@ -5,7 +5,7 @@
     public $id;
 
     public function __construct($id) {
-      $this->id      = $id;
+      $this->Project_ID      = $id;
     }
 
     public static function all() {
