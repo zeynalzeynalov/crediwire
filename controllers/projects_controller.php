@@ -1,6 +1,6 @@
 <?php
   class ProjectsController {
-    public function home() {
+    public function main() {
       $first_name = 'Jon';
       $last_name  = 'Snow';
       require_once('views/projects/main.php');
