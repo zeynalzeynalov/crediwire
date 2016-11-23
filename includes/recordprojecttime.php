@@ -49,9 +49,9 @@
       $projectRecordList = getProjectTimeRecords($_REQUEST["project_id"]);
       
       $return_value = "";
-	  
+
       foreach ($projectRecordList as $r)
-        $return_value .= '<span>'.$r->Starting_Time_Stamp.' - '.$r->End_Time_Stamps.'</span>';
+        $return_value .= '<span class="label label-info">'.$r->Starting_Time_Stamp.' - '.$r->End_Time_Stamps.'</span><br>';
         
       echo $return_value === "" ? "no suggestion" : $return_value;;
   }
