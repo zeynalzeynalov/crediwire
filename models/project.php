@@ -9,13 +9,18 @@
     }
 
     public static function all() {
-      $list = [];
-      $db = Db::getInstance();
-      $req = $db->query('SELECT * FROM posts');
+      $projectList = [];
+      $con = dbConnection::connectToDB();
+      $req = $con->query();
 
+      
+      $query = 'SELECT * FROM Projects';
+ $results = pg_query($con, 'SELECT * FROM posts') or die('Query failed: ' . pg_last_error());
+ 
+      
       // we create a list of Post objects from the database results
-      foreach($req->fetchAll() as $post) {
-        $list[] = new Post($post['id'], $post['author'], $post['content']);
+      foreach( $results->fetchAll() as $project) {
+        $projectList[] = new Project($project['Project_ID']);
       }
 
       return $list;
