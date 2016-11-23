@@ -3,13 +3,10 @@
     require_once('controllers/' . $controller . '_controller.php');
 
     switch($controller) {
-      case 'pages':
-        $controller = new ProjectsController();
-      break;
-      case 'posts':
+      case 'projects':
         // we need the model to query the database later in the controller
-        require_once('models/post.php');
-        $controller = new PostsController();
+        require_once('models/project.php');
+        $controller = new ProjectsController();
       break;
     }
 
