@@ -12,9 +12,8 @@
 
     public function __construct($Starting_Time_Stamp, $End_Time_Stamps)
     {
-       $this->$Starting_Time_Stamp = $Starting_Time_Stamp;
-       $this->$End_Time_Stamps = $End_Time_Stamps;
-	    echo "I am here.....!";
+       $this->Starting_Time_Stamp = $Starting_Time_Stamp;
+       $this->End_Time_Stamps = $End_Time_Stamps;
     }
   }
 
@@ -25,14 +24,13 @@
 	  
 	$query_select = sprintf('SELECT "Project_Execution_Record_ID", "Starting_Time_Stamp", "End_Time_Stamps", "Is_Completed", "Project_ID" FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
         
-	echo $query_select;
+	//echo $query_select;
 	  
 	$results = pg_query($dbconn,$query_select) or die('Query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
           $recordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['End_Time_Stamps']);
 	  
-	  echo count ($recordList).'---';
         return $recordList;
   }
 
@@ -51,8 +49,6 @@
       $projectRecordList = getProjectTimeRecords($_REQUEST["project_id"]);
       
       $return_value = "";
-      
-	  echo $projectRecordList[0]->Starting_Time_Stamp;
 	  
       foreach ($projectRecordList as $r)
         $return_value .= '<span>'.$r->Starting_Time_Stamp.' - '.$r->End_Time_Stamps.'</span>';
