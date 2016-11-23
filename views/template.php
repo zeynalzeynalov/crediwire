@@ -20,9 +20,11 @@
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("txtHint" + js_project_id).innerHTML = this.responseText;
-                document.getElementById("btnAjax" + js_project_id).value = "STOP";
               
-              
+                if(document.getElementById("btnAjax" + js_project_id).value == "Start working")
+                  document.getElementById("btnAjax" + js_project_id).value = "Stop working";
+                else
+                  document.getElementById("btnAjax" + js_project_id).value = "Start working"
             }
         };
         //alert("includes/recordprojecttime.php?project_id=" + js_project_id + "&action=" + js_action);
