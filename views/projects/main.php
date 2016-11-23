@@ -14,9 +14,7 @@
 
     <input class="btn btn-<?= $project->Project_State == "Start working"? "success" : "danger" ?>" type="button" id="btnAjax_<?= $project->Project_ID ?>" value="<?= $project->Project_State ?>" onclick="showHint(this.id, 'getProjectTimeRecords')">
     
-    <p>Suggestions: <span id="txtHint<?= $project->Project_ID ?>"></span></p>
-    <button type="button" class="btn btn-success">Start stopwatch</button>
-    <button type="button" class="btn btn-danger">Stop stopwatch</button>
+    <p>Working details: <span id="txtHint<?= $project->Project_ID ?>"></span></p>
   </div>
 </div>
       
