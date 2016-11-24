@@ -42,6 +42,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Help</a></li>
+            <li><span class="label label-info">Welcome, Bob!</span></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
