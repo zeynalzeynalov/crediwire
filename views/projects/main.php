@@ -26,7 +26,7 @@
         <?php foreach ($project->Project_Execution_Record as $timeRecord): ?>
             
         <span class="label label-info"><?= $timeRecord->Starting_Time_Stamp ?> - <?= $timeRecord->Ending_Time_Stamp ?> </span><br>
-                        }
+                        
         <?php endforeach; ?>
         
         
