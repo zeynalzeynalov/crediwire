@@ -12,6 +12,7 @@
 
       function manageProjectTimeRecord($ID)
       {
+	        echo 'hereeeee';
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID);
 	
