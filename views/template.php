@@ -89,7 +89,7 @@
     <h4><span class="label label-info">Welcome, Bob!</span>Let's start completing waiting projects!</h4>
     
     <header>
-      <a href='/php_mvc_blog'>Home</a>
+
     </header>
     <form> 
       <?php require_once(dirname(dirname(__FILE__)).'/includes/starter.php'); ?>
