@@ -7,13 +7,13 @@
   <div class="panel-body">
     Project created on: <?= $project->Project_Created_Date ?>
     
-    <input class="btn btn-<?= $project->Project_State == "Start working"? "success" : "danger" ?>" type="button" id="btnAjax_<?= $project->Project_ID ?>" value="<?= $project->Project_State ?>" onclick="showHint(this.id, 'getProjectTimeRecords')">
+    <input class="btn btn-<?= $project->Project_State == "Start working"? "success" : "danger" ?>" type="button" id="btnAjax_<?= $project->Project_ID ?>" value="<?= $project->Project_State ?>" onclick="processAjaxRequest(this.id, 'getProjectTimeRecords')">
     <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_ID ?>" aria-expanded="false" aria-controls="collapseExample">
     Show/hide time records:
     </a>
     <div class="collapse" id="collapseExample_<?= $project->Project_ID ?>">
       <div class="well">
-        <p> <span id="txtHint<?= $project->Project_ID ?>"></span></p>
+        <p> <span id="ajaxResponseContainer<?= $project->Project_ID ?>"></span></p>
       </div>
     </div>
 
