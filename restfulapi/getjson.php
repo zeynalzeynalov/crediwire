@@ -16,11 +16,11 @@
 	class Project_Execution_Record
 	{
 		public $Starting_Time_Stamp;
-		public $End_Time_Stamps;
-		public function __construct($Starting_Time_Stamp, $End_Time_Stamps)
+		public $Ending_Time_Stamp;
+		public function __construct($Starting_Time_Stamp, $End_Time_Stamp)
 		{
 		$this->Starting_Time_Stamp = $Starting_Time_Stamp;
-		$this->End_Time_Stamps = $End_Time_Stamps;
+		$this->Ending_Time_Stamp = $Ending_Time_Stamp;
 		}
 	}
 
