@@ -47,7 +47,9 @@
       </div><!-- /.container-fluid -->
     </nav>
     
-    <h4><span class="label label-info">Welcome, Bob!</span>Let's start completing waiting projects!</h4>
+    <h4>Let's start completing waiting projects!</h4>
+    
+    <div style="height: 50px;" />
     
     <header>
 
