@@ -7,7 +7,7 @@
   <div class="panel-body">
     Project created on: <?= $project->Project_Created_Date ?>
     
-    <input class="btn btn-<?= $project->Project_State == "Start working"? "success" : "danger" ?>" type="button" id="btnAjax_<?= $project->Project_ID ?>" value="<?= $project->getButtonStringForProjectState() ?>" onclick="processAjaxRequest(this.id)">
+    <input class="<?= $project->getButtonStringCssClassForProjectState() ?>" type="button" id="btnAjax_<?= $project->Project_ID ?>" value="<?= $project->getButtonStringForProjectState() ?>" onclick="processAjaxRequest(this.id)">
     <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_ID ?>" aria-expanded="false" aria-controls="collapseExample">
     Show/hide time records:
     </a>
