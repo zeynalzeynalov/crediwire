@@ -19,6 +19,11 @@
         return ($this->Project_State == "CLOSED" ? "Start working" : "Stop working");
     }
     
+    public function getButtonStringCssClassForProjectState()
+    {
+        return ($this->Project_State == "CLOSED" ? "btn btn-success" : "btn btn-danger");
+    }
+    
     public static function fetchAll()
     {
         $projectList = [];
