@@ -1,5 +1,6 @@
 <?php foreach ($projects as $project): ?>
 
+<div class="container">
   <div class="panel-group">
       <div class="panel panel-primary">
       <div class="panel-heading">
@@ -21,5 +22,5 @@
       </div>
       </div>
   </div>
-      
+</div>
 <?php endforeach; ?>
