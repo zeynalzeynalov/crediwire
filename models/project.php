@@ -20,10 +20,11 @@
     {
         $projectList = [];
         $con = dbConnection::connectToDB();
-        $results = pg_query($con,'SELECT P.*, coalesce(TMP."Project_Open_Record_Count",0) "Project_Open_Record_Count" FROM public."Project" P LEFT JOIN
-(SELECT "Project_ID", count(*) "Project_Open_Record_Count" FROM public."Project_Execution_Record" WHERE "Is_Completed" = FALSE GROUP BY "Project_ID") TMP 
-ON P."Project_ID" = TMP."Project_ID" 
-ORDER BY P."Project_ID" ASC') or die('Query failed: ' . pg_last_error());
+        $results = pg_query($con,'SELECT P.*, coalesce(TMP."Project_Open_Record_Count",0) "Project_Open_Record_Count"
+            FROM public."Project" P LEFT JOIN
+            (SELECT "Project_ID", count(*) "Project_Open_Record_Count" FROM public."Project_Execution_Record" WHERE "Is_Completed" = FALSE GROUP BY "Project_ID") TMP 
+            ON P."Project_ID" = TMP."Project_ID" 
+            ORDER BY P."Project_ID" ASC') or die('Query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
           $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Slug'], $row['Project_Created_Date'],$row['Project_Open_Record_Count'] > 0 ? "Stop working" : "Start working");
