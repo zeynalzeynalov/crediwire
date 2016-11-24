@@ -12,8 +12,8 @@
 
       <br />
       <br />
-      <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_ID ?>" expanded="true" aria-expanded="false" aria-controls="collapseExample">
-      Show/hide time records:
+      <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_ID ?>" aria-expanded="true" aria-controls="collapseExample">
+      Show/hide
       </a>  
         
 
