@@ -39,14 +39,11 @@
 			http_response_code(404);
 		}
 
-		if (!$ID)
-			echo '[';
 
+		echo '[';
 		for ($i=0; $i < pg_num_rows ($results); $i++)
 			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($results));
-
-		if (!$ID)
-			echo ']';
+		echo ']';
 
 		pg_close($dbCon);
 	}
