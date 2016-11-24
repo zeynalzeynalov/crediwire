@@ -13,7 +13,7 @@
       function manageProjectTimeRecord($ID)
       {
           $dbconn = dbConnection::connectToDB();
-          $insert_result = pg_query($dbconn, 'INSERT INTO public."Project_Execution_Record" ("Project_Execution_Record_ID", "Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (0, NOW(), FALSE, $ID);');
+          $insert_result = pg_query($dbconn, sprintf('INSERT INTO public."Project_Execution_Record" ("Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (NOW(), FALSE, %d);', $ID);
           if (pg_num_rows($insert_result)) 
               echo "true";
           else
