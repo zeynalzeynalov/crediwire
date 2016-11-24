@@ -16,12 +16,21 @@
       <br />
       <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_ID ?>" aria-expanded="true" aria-controls="collapseExample">
       Show/hide
-      </a>  
+      </a>
         
 
       <div class="collapse" id="collapseExample_<?= $project->Project_ID ?>">
       <div class="well">
-      <p> <span id="ajaxResponseContainer<?= $project->Project_ID ?>"></span></p>
+      <p> <span id="ajaxResponseContainer<?= $project->Project_ID ?>">
+        
+        <?php foreach ($project->TimeRecords as $timeRecord): ?>
+            
+        <span class="label label-info"><?= $timeRecord->Starting_Time_Stamp ?> - <?= $timeRecord->Ending_Time_Stamp ?> </span><br>
+                        }
+        <?php endforeach; ?>
+        
+        
+        </span></p>
       </div>
       </div>
 
