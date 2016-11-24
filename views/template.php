@@ -62,6 +62,7 @@
 
     <footer>
       <center>CrediWire coding assignment. [Zeynal Zeynalov]</center>
+      <br>
     </footer>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
