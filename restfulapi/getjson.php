@@ -17,7 +17,7 @@
 	{
 		public $Starting_Time_Stamp;
 		public $Ending_Time_Stamp;
-		public function __construct($Starting_Time_Stamp, $End_Time_Stamp)
+		public function __construct($Starting_Time_Stamp, $Ending_Time_Stamp)
 		{
 		$this->Starting_Time_Stamp = $Starting_Time_Stamp;
 		$this->Ending_Time_Stamp = $Ending_Time_Stamp;
