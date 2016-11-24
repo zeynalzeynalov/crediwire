@@ -14,18 +14,31 @@
       {
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID);
-
-
-
-		$query_insert = sprintf('INSERT INTO public."Project_Execution_Record" ("Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (NOW(), FALSE, %d);', $ID);
-
-		echo $query_insert;
-		$insert_result = pg_query($dbConn, $query_insert);
-
-		if (pg_affected_rows($insert_result) > 0)
-		echo "true";
-		else
-		echo "false";
+	
+	      	// Firstly check project state
+		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) Project_State;', $ID);
+		
+		$row = pg_fetch_assoc($result_state)
+		
+		if( $row['Project_State'] == 'CLOSED' )
+		{
+			$query_action = sprintf('INSERT INTO public."Project_Execution_Record" ("Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (NOW(), FALSE, %d);', $ID);
+			$result_action = pg_query($dbConn, $query_action);
+			echo "OPENED";		 
+		}
+		else if( $row['Project_State'] == 'OPEN' )
+		 {
+			$query_action = sprintf('UPDATE public."Project_Execution_Record"
+				SET 
+				"Ending_Time_Stamp" = NOW(),
+				"Is_Completed" = TRUE
+				WHERE "Project_Execution_Record_ID" IN
+				(SELECT MAX("Project_Execution_Record_ID") FROM "Project_Execution_Record" WHERE "Project_ID" = %d)
+				AND
+				"Is_Completed" = FALSE;', $ID);
+			$result_action = pg_query($dbConn, $query_action);
+			echo "CLOSED";	
+		 }
 
 		pg_close($dbCon);
       }
