@@ -32,7 +32,7 @@
                     var outputHtml = "";
                     for(var i = 0; i < objArray.length; i++)
                     {
-                        outputHtml += ('<span class="label label-info">' + objArray[i].Starting_Time_Stamp + ' - ' + objArray[i].End_Time_Stamps + '</span><br>';
+                        outputHtml += ('<span class="label label-info">' + objArray[i].Starting_Time_Stamp + ' - ' + objArray[i].End_Time_Stamps + '</span><br>');
                     }
 
                     document.getElementById("txtHint" + js_project_id).innerHTML = outputHtml;
