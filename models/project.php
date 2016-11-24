@@ -16,7 +16,7 @@
     
     public function getButtonStringForProjectState()
     {
-        retuen ($this->Project_State == "CLOSED" ? "Start working" : "Stop working");
+        return ($this->Project_State == "CLOSED" ? "Start working" : "Stop working");
     }
     
     public static function fetchAll()
