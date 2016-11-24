@@ -19,6 +19,22 @@
     public $Project_State;
     public $Project_Execution_Record;
 
+    public function getProjectExecutionRecords()
+    {
+       $timeRecordList = [];
+       $dbCon = dbConnection::connectToDB();
+       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $this->Project_ID);
+       
+       $results = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
+
+        while ($row = pg_fetch_assoc($results))
+          $timeRecordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['Ending_Time_Stamp']);
+
+        pg_close($dbCon);
+      
+        return $timeRecordList;
+    }    
+        
     public function __construct($Project_ID, $Project_Title, $Project_Created_Date, $Project_State)
     {
         $this->Project_ID = $Project_ID;
@@ -37,22 +53,6 @@
     public function getButtonStringCssClassForProjectState()
     {
         return ($this->Project_State == "CLOSED" ? "btn btn-success" : "btn btn-danger");
-    }
-    
-    public function getProjectExecutionRecords()
-    {
-       $timeRecordList = [];
-       $dbCon = dbConnection::connectToDB();
-       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $this->Project_ID);
-       
-       $results = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
-
-        while ($row = pg_fetch_assoc($results))
-          $timeRecordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['Ending_Time_Stamp']);
-
-        pg_close($dbCon);
-      
-        return $timeRecordList;
     }
     
     public static function fetchAll()
