@@ -41,6 +41,4 @@
   else
     if( $_REQUEST["action"] == "startTimeRecord")
       startTimeRecord($_REQUEST["project_id"]);
-  
-  
 ?>
