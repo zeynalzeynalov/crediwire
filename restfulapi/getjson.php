@@ -11,6 +11,8 @@
 
 	$request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 
+	echo($request);
+
 	class Project_Execution_Record
 	{
 		public $Starting_Time_Stamp;
@@ -52,7 +54,9 @@
 
 	$RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
 	$ID = array_shift($request)+0;
-
+	
+	echo($RESOURCE);
+	echo($ID);
 	if($RESOURCE == "getProjectTimeRecords" && isset($ID))
 		getProjectTimeRecords($ID);
 ?>
