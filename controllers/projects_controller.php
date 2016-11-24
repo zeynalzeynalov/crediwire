@@ -4,7 +4,7 @@
       $first_name = 'Jon';
       $last_name  = 'Snow';
       
-      $projects = Project::all();
+      $projects = Project::fetchAll();
       
       require_once('views/projects/main.php');
     }
