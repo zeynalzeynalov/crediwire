@@ -13,7 +13,12 @@
         $this->Project_Created_Date = $Project_Created_Date;
         $this->Project_State = $Project_State;
     }
-
+    
+    public function getButtonStringForProjectState()
+    {
+        retuen ($this->Project_State == "CLOSED" ? "Start working" : "Stop working");
+    }
+    
     public static function fetchAll()
     {
         $projectList = [];
