@@ -61,7 +61,7 @@
  
             
             
-            echo coun($timeRecordList);
+            echo count($timeRecordList);
             
           $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Created_Date'], $row['Project_State'], $timeRecordList); 
         }
