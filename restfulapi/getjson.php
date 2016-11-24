@@ -22,52 +22,37 @@
 		}
 	}
 
-	function getProjectTimeRecords($projectID)
+	function getProjectTimeRecords($ID)
 	{
 		$recordList = [];
-		$dbconn = dbConnection::connectToDB();
-
-		
-		while ($row = pg_fetch_assoc($results))
-		  $recordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['End_Time_Stamps']);
-
-		return $recordList;
-		
-		$DB_TABLE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
-		$ID = array_shift($request)+0;
-
-		$DB_TABLE = mysqli_real_escape_string($dbCon, $DB_TABLE );
-		$ID = mysqli_real_escape_string($dbCon, $ID );
+		$dbConn = dbConnection::connectToDB();
+		$ID = pg_escape_string ($dbConn, $ID );
 	
-		$query_select = sprintf('SELECT * FROM public."%s" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d;',$DB_TABLE, $ID);
-
-		$results = pg_query($dbconn,$query_select) or die('Query failed: ' . pg_last_error());
+		$query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $ID);
+		$results = pg_query($dbconn, $query_select) or die('Query failed: ' . pg_last_error());
 		
-		$sqlQuery = "SELECT * FROM ``".( $ID ? " WHERE ID = $ID" : '' );
-
-		$result = mysqli_query($dbCon,$sqlQuery);
-
-		if (!$result)
+		if (!$results)
 		{
+			pg_close($dbConn);
 			http_response_code(404);
-			die(mysqli_error());
 		}
 
 		if (!$ID)
 			echo '[';
 
-		for ($i=0; $i < mysqli_num_rows($result); $i++)
-			echo ( $i>0 ? ',' : '').json_encode(mysqli_fetch_object($result));
+		for ($i=0; $i < pg_num_rows ($results); $i++)
+			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($results));
 
 		if (!$ID)
 			echo ']';
 
-		mysqli_close($dbCon);
-		
+		pg_close($dbCon);
 	}
 
 
+	$RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
+	$ID = array_shift($request)+0;
 
-		
-
+	if($RESOURCE == "getProjectTimeRecords" && isset($ID))
+		getProjectTimeRecords($ID);
 ?>
