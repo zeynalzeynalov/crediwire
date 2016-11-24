@@ -53,10 +53,10 @@
        $dbCon = dbConnection::connectToDB();
        $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
        
-       $results = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
+       $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
 
-        while ($row = pg_fetch_assoc($results))
-          $timeRecordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['Ending_Time_Stamp']);
+        while ($w = pg_fetch_assoc($r))
+          $timeRecordList[] = new Project_Execution_Record($w['Starting_Time_Stamp'], $w['Ending_Time_Stamp']);
 
  
             
