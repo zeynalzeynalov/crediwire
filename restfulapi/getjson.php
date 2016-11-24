@@ -26,7 +26,6 @@
 
 	function getProjectTimeRecords($ID)
 	{
-		$recordList = [];
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID );
 	
@@ -39,7 +38,6 @@
 			http_response_code(404);
 		}
 
-
 		echo '[';
 		for ($i=0; $i < pg_num_rows ($results); $i++)
 			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($results));
@@ -48,6 +46,27 @@
 		pg_close($dbCon);
 	}
 
+	function getProjectDetails($ID)
+	{
+		$dbConn = dbConnection::connectToDB();
+		$ID = pg_escape_string ($dbConn, $ID );
+	
+		$query_select = sprintf('SELECT * FROM public."Project" WHERE "Project_ID" = %d;', $ID);
+		$results = pg_query($dbConn, $query_select) or die('Query failed: ' . pg_last_error());
+		
+		if (!$results)
+		{
+			pg_close($dbConn);
+			http_response_code(404);
+		}
+		
+		echo '[';
+		for ($i=0; $i < pg_num_rows ($results); $i++)
+			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($results));
+		echo ']';
+
+		pg_close($dbCon);
+	}
 
 	$RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
 	$ID = array_shift($request)+0;
