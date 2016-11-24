@@ -5,7 +5,7 @@ function processAjaxRequest(js_project_id,js_action)
 
     if (js_project_id.length == 0)
     { 
-        document.getElementById("txtHint" + js_project_id).innerHTML = "";
+        document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = "";
         return;
     } 
     else 
@@ -22,7 +22,7 @@ function processAjaxRequest(js_project_id,js_action)
                     outputHtml += ('<span class="label label-info">' + objArray[i].Starting_Time_Stamp + ' - ' + objArray[i].End_Time_Stamps + '</span><br>');
                 }
 
-                document.getElementById("txtHint" + js_project_id).innerHTML = outputHtml;
+                document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = outputHtml;
 
                 if(document.getElementById("btnAjax_" + js_project_id).value == "Start working")
                 {
