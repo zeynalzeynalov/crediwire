@@ -12,20 +12,22 @@
 
       function manageProjectTimeRecord($ID)
       {
-          $dbConn = dbConnection::connectToDB();
-	    $ID = pg_escape_string ($dbConn, $ID);
-          
-          $query_insert = sprintf('INSERT INTO public."Project_Execution_Record" ("Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (NOW(), FALSE, %d);', $ID);
-          
-          echo $query_insert;
-          $insert_result = pg_query($dbConn, $query_insert);
-                      
-          if (pg_affected_rows($insert_result) > 0)
-              echo "true";
-          else
-              echo "false";
-          
-          pg_close($dbCon);
+		$dbConn = dbConnection::connectToDB();
+		$ID = pg_escape_string ($dbConn, $ID);
+
+
+
+		$query_insert = sprintf('INSERT INTO public."Project_Execution_Record" ("Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (NOW(), FALSE, %d);', $ID);
+
+		echo $query_insert;
+		$insert_result = pg_query($dbConn, $query_insert);
+
+		if (pg_affected_rows($insert_result) > 0)
+		echo "true";
+		else
+		echo "false";
+
+		pg_close($dbCon);
       }
 
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
