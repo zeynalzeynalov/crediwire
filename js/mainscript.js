@@ -44,7 +44,7 @@ function processAjaxRequest(js_project_id)
             xmlhttp.send();
         }
         
-        xmlhttpRecordTime.open("GET", "restfulapi/getjson.php/getProjectTimeRecords/" + js_project_id, true);
+        xmlhttpRecordTime.open("GET", "restfulapi/performaction.php/manageProjectTimeRecord/" + js_project_id, true);
         xmlhttpRecordTime.send();
     }
 }
