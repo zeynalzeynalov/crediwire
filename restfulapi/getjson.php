@@ -43,7 +43,7 @@
 			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($results));
 		echo ']';
 
-		pg_close($dbCon);
+		pg_close($dbConn);
 	}
 
 	function getProjectDetails($ID)
