@@ -73,4 +73,7 @@
 	
 	if(strtoupper($RESOURCE) == strtoupper("getProjectTimeRecords") && isset($ID))
 		getProjectTimeRecords($ID);
+	else
+	if(strtoupper($RESOURCE) == strtoupper("getProjectDetails") && isset($ID))	
+		getProjectDetails($ID);
 ?>
