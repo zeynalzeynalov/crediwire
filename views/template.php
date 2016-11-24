@@ -41,8 +41,8 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Help</a></li>
-            <li>Welcome, <b>Bob!</b></li>
+            <li><a href="https://crediwire.herokuapp.com/help.html">Help</a></li>
+            <li><a href="#">Welcome, <b>Bob!</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
