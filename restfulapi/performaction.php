@@ -18,7 +18,7 @@
 	      	// Firstly check project state
 		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) Project_State;', $ID));
 		
-		$row = pg_fetch_assoc($result_state)
+		$row = pg_fetch_assoc($result_state);
 		
 		if( $row['Project_State'] == 'CLOSED' )
 		{
