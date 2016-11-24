@@ -51,7 +51,7 @@
             
                  $timeRecordList = [];
        $dbCon = dbConnection::connectToDB();
-       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
+       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $row['Project_ID']);
        
        $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
 
@@ -61,7 +61,7 @@
  
             
             
-            echo count($timeRecordList);
+            //echo count($timeRecordList);
             
           $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Created_Date'], $row['Project_State'], $timeRecordList); 
         }
