@@ -37,8 +37,8 @@
                 }
             }
         };
-        //alert("includes/recordprojecttime.php?project_id=" + js_project_id + "&action=" + js_action);
-        xmlhttp.open("GET", "includes/recordprojecttime.php?project_id=" + js_project_id + "&action=" + js_action, true);
+
+        xmlhttp.open("GET", "restfulapi/getjson.php/getProjectTimeRecords/" + js_project_id, true);
         xmlhttp.send();
     }
     }
