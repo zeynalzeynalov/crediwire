@@ -20,10 +20,10 @@
           echo $query_insert;
           $insert_result = pg_query($dbConn, $query_insert);
                       
-          if (pg_num_rows($insert_result)) 
-              echo "true";
-          else
+          if (!$results)
               echo "false";
+          else
+              echo "true";
           
           pg_close($dbCon);
       }
