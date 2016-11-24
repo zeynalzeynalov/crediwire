@@ -20,6 +20,7 @@ function processAjaxRequest(js_project_id)
                 {
                     if (this.readyState == 4 && this.status == 200)
                     {
+                        alert('inner request');
                         var objArray = JSON.parse(this.responseText);
                         var outputHtml = "";
                         for(var i = 0; i < objArray.length; i++)
