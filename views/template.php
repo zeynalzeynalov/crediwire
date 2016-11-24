@@ -32,7 +32,7 @@
           <ul class="nav navbar-nav">
             <!--li class="active"><a href="#">Dummy<span class="sr-only">(current)</span></a></li-->
             <li class="dropdown">
-          <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">API<span class="caret"></span></a>
+          <a href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">API<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectDetails/1" target="_blank">API - Get Project Details (Project ID = 1)</a></li>
             <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectTimeRecords/1" target="_blank">API - Get Project Time Records (Project ID = 1)</a></li>
