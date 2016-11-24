@@ -57,6 +57,6 @@
 	
 	echo($RESOURCE);
 	echo($ID);
-	if($RESOURCE == "getProjectTimeRecords" && isset($ID))
+	if(strtoupper($RESOURCE) == strtoupper("getProjectTimeRecords") && isset($ID))
 		getProjectTimeRecords($ID);
 ?>
