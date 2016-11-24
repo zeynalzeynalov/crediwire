@@ -21,7 +21,7 @@
     
     public function getButtonStringCssClassForProjectState()
     {
-        return ($this->Project_State == "CLOSED" ? "btn btn-success  pull-right" : "btn btn-danger  pull-right");
+        return ($this->Project_State == "CLOSED" ? "btn btn-success" : "btn btn-danger");
     }
     
     public static function fetchAll()
