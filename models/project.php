@@ -18,22 +18,6 @@
     public $Project_Created_Date;
     public $Project_State;
     public $Project_Execution_Record;
-
-    public function getProjectExecutionRecords($projectID)
-    {
-       $timeRecordList = [];
-       $dbCon = dbConnection::connectToDB();
-       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
-       
-       $results = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
-
-        while ($row = pg_fetch_assoc($results))
-          $timeRecordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['Ending_Time_Stamp']);
-
-        pg_close($dbCon);
-      
-        return $timeRecordList;
-    }    
         
     public function __construct($Project_ID, $Project_Title, $Project_Created_Date, $Project_State, $timeRecordList)
     {
@@ -64,10 +48,22 @@
 
         while ($row = pg_fetch_assoc($results))
         {
-          $timeList = [];  
-          $timeList = getProjectExecutionRecords($row['Project_ID']);
             
-          $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Created_Date'], $row['Project_State'], $timeList); 
+                 $timeRecordList = [];
+       $dbCon = dbConnection::connectToDB();
+       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $projectID);
+       
+       $results = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
+
+        while ($row = pg_fetch_assoc($results))
+          $timeRecordList[] = new Project_Execution_Record($row['Starting_Time_Stamp'], $row['Ending_Time_Stamp']);
+
+ 
+            
+            
+            
+            
+          $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Created_Date'], $row['Project_State'], $timeRecordList); 
         }
         pg_close($dbCon);
         return $projectList;
