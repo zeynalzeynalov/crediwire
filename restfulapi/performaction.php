@@ -1,44 +1,28 @@
 <?php
-  $projectID = $_REQUEST["project_id"];
+      header("Access-Control-Allow-Orgin: *");
+      header("Access-Control-Allow-Methods: *");
+      header("Content-Type: application/json");
 
-  $result_string = "";
+      require_once(dirname(dirname(__FILE__)).'/config/configuration.php');
+      require_once(dirname(dirname(__FILE__)).'/includes/dbconnection.php');
 
-  require_once(dirname(dirname(__FILE__)).'/config/configuration.php');
-  require_once(dirname(dirname(__FILE__)).'/includes/dbconnection.php');
-  
-  class Project_Execution_Record {
-    public $Starting_Time_Stamp;
-    public $End_Time_Stamps;
+      if($_SERVER['REQUEST_METHOD'] != 'GET')
+      die("Error: Not a GET request!");
+      $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 
-    public function __construct($Starting_Time_Stamp, $End_Time_Stamps)
-    {
-       $this->Starting_Time_Stamp = $Starting_Time_Stamp;
-       $this->End_Time_Stamps = $End_Time_Stamps;
-    }
-  }
+      function manageProjectTimeRecord($ID)
+      {
+          $dbconn = dbConnection::connectToDB();
+          $insert_result = pg_query($dbconn, 'INSERT INTO public."Project_Execution_Record" ("Project_Execution_Record_ID", "Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (0, NOW(), FALSE, $ID);');
+          if (pg_num_rows($insert_result)) 
+              echo "true";
+          else
+              echo "false";
+      }
 
-  function startTimeRecord($projectID)
-  {
-      $dbconn = dbConnection::connectToDB();
-      $insert_result = pg_query($dbconn, 'INSERT INTO public."Project_Execution_Record" ("Project_Execution_Record_ID", "Starting_Time_Stamp", "Is_Completed", "Project_ID") VALUES (0, now(), FALSE, $projectID);');
-      if (pg_num_rows($insert_result)) 
-        echo "Record Added!<br/>";
-      else
-        echo "Record not Added :(";
-  }
-  
-  if( $_REQUEST["action"] == "getProjectTimeRecords")
-  {
-      $projectRecordList = getProjectTimeRecords($_REQUEST["project_id"]);
-      
-      $return_value = "";
+      $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
+      $ID = array_shift($request)+0;
 
-      foreach ($projectRecordList as $r)
-        $return_value .= '<span class="label label-info">'.$r->Starting_Time_Stamp.' - '.$r->End_Time_Stamps.'</span><br>';
-        
-      echo $return_value === "" ? "no suggestion" : $return_value;;
-  }
-  else
-    if( $_REQUEST["action"] == "startTimeRecord")
-      startTimeRecord($_REQUEST["project_id"]);
+      if(strtoupper($RESOURCE) == strtoupper("manageProjectTimeRecord") && isset($ID))
+            manageProjectTimeRecord($ID);
 ?>
