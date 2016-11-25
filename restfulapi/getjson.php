@@ -24,7 +24,7 @@
 		to_char(ending_time_stamp, 'DD-MM-YYYY HH24:MI:SS') ending_time_stamp,
 		is_completed,
 		project_id,
-		final_execution_time
+		final_execution_time,
 		
             	TO_CHAR(interval '1 second' * final_execution_time, 'HH24:MI:SS') time_diff_text 
 		
