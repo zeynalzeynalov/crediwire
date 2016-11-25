@@ -10,6 +10,10 @@
                   require_once(dirname(dirname(__FILE__)).'/models/project.php');
                   $controller = new ProjectsController();
               break;
+                        
+              case 'help':
+                  $controller = new HelpController();
+              break;
             }
 
             $controller->{ $action }();
