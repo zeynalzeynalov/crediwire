@@ -1,3 +1,5 @@
+<center><h4>Let's start completing waiting projects!</h4></center>
+
 <?php foreach ($projects as $project): ?>
 
 <div class="container">
