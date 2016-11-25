@@ -2,15 +2,15 @@
 
     class Project_Execution_Record
     {
-        public $Starting_Time_Stamp;
-        public $Ending_Time_Stamp;
-        public $Time_Diff_Text;
+        public $starting_time_stamp;
+        public $ending_time_stamp;
+        public $time_diff_text;
 
         public function __construct($Starting_Time_Stamp, $Ending_Time_Stamp, $Time_Diff_Text)
         {
-          $this->Starting_Time_Stamp = $Starting_Time_Stamp;
-          $this->Ending_Time_Stamp = $Ending_Time_Stamp;
-          $this->Time_Diff_Text = $Time_Diff_Text;
+          $this->starting_time_stamp = $Starting_Time_Stamp;
+          $this->ending_time_stamp = $Ending_Time_Stamp;
+          $this->time_diff_text = $Time_Diff_Text;
         }
     }
 
