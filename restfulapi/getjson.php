@@ -18,7 +18,15 @@
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID );
 	
-		$query_select = sprintf('SELECT * FROM public.Project_Execution_Record WHERE is_completed = TRUE AND Project_ID = %d ORDER BY Project_Execution_Record_ID ASC;', $ID);
+		$query_select = sprintf('SELECT
+		project_execution_record_id,
+		to_char(starting_time_stamp, 'DD-MM-YYYY HH24:MI:SS') starting_time_stamp,
+		to_char(ending_time_stamp, 'DD-MM-YYYY HH24:MI:SS') ending_time_stamp,
+		is_completed,
+		project_id,
+		final_execution_time
+		
+		FROM public.Project_Execution_Record WHERE is_completed = TRUE AND Project_ID = %d ORDER BY Project_Execution_Record_ID ASC;', $ID);
 		$results = pg_query($dbConn, $query_select) or die('Query failed: ' . pg_last_error());
 		
 		if (!$results)
