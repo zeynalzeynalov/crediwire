@@ -25,10 +25,9 @@
         
         <?php foreach ($project->project_execution_record as $timeRecord): ?>
             
-        <span class="label label-info"><?= $timeRecord->starting_time_stamp ?> - <?= $timeRecord->ending_time_stamp ?> Total spent time = <?= $timeRecord->time_diff_text ?> </span><br>
+        <span><?= $timeRecord->starting_time_stamp ?>  -  <?= $timeRecord->ending_time_stamp ?>  Total spent time = <?= $timeRecord->time_diff_text ?> </span><br>
                         
         <?php endforeach; ?>
-        
         
         </span></p>
       </div>
