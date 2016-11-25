@@ -2,4 +2,4 @@
     RewriteEngine on
     RewriteRule    ^$    public_app/      [L]
     RewriteRule    (.*)  public_app/$1    [L]
- </IfModule>
+</IfModule>
