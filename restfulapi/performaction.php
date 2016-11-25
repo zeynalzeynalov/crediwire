@@ -16,17 +16,14 @@
 		$ID = pg_escape_string ($dbConn, $ID);
 	
 	      	// Firstly check project state
-		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) as project_state;', $ID));
-	       echo sprintf('SELECT public.Check_Project_State(%d) project_state;', $ID);
+		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) as project_state;', $ID)) or die('Select query failed: ' . pg_last_error());;
+
 		$row = pg_fetch_assoc($result_state);
-	        echo "State:".$row['project_state'];
+
 		if( $row['project_state'] == 'CLOSED' )
 		{
-			echo "insert";
 			$query_action = sprintf('INSERT INTO public.Project_Execution_Record (Starting_Time_Stamp, is_Completed, Project_ID) VALUES (NOW(), FALSE, %d);', $ID);
-			$result_action = pg_query($dbConn, $query_action);
-			
-			echo '<br>'.$query_action.'<br>';
+			$result_action = pg_query($dbConn, $query_action) or die('Insert query failed: ' . pg_last_error());;
 			
 			echo "OPENED";		 
 		}
@@ -36,16 +33,13 @@
 				SET 
 				Ending_Time_Stamp = NOW(),
 				is_Completed = TRUE,
-				Final_Execution_Time = EXTRACT(EPOCH FROM (NOW() - Starting_Time_Stamp)),
+				Final_Execution_Time = EXTRACT(EPOCH FROM (NOW() - Starting_Time_Stamp))
 				WHERE Project_Execution_Record_ID IN
 				(SELECT MAX(Project_Execution_Record_ID) FROM Project_Execution_Record WHERE Project_ID = %d)
 				AND
 				is_Completed = FALSE;', $ID);
-			$result_action = pg_query($dbConn, $query_action);
-			echo "CLOSED";	
-			
-			echo "here---------------";
-			echo "$query_action";
+			$result_action = pg_query($dbConn, $query_action) or die('Update query failed: ' . pg_last_error());;
+			echo "CLOSED";
 		 }
 
 		pg_close($dbCon);
