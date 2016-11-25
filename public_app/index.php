@@ -23,8 +23,8 @@
         $action     = 'main';
     }       
 
-echo $_CONTROLLER;
-echo $_ACTION;
+echo $controller;
+echo $action;
 
     require_once(dirname(dirname(__FILE__)).'/views/template.php');
 ?>
