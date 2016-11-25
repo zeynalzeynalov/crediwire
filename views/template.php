@@ -48,18 +48,14 @@
       </div><!-- /.container-fluid -->
     </nav>
     
-    <center><h4>Let's start completing waiting projects!</h4></center>
-    
-    <div style="height: 50px;" />
-    
     <header>
 
     </header>
+    
     <form> 
       <?php require_once(dirname(dirname(__FILE__)).'/includes/starter.php'); ?>
     </form>
     
-
     <footer>
       <center>CrediWire coding assignment. [Zeynal Zeynalov]</center>
       <br>
