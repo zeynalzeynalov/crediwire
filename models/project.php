@@ -54,7 +54,7 @@
             
             $timeRecordList = [];
             $dbCon = dbConnection::connectToDB();
-            $query_select = sprintf('SELECT *, TO_CHAR(concat( Final_Execution_Time , ' second')::interval, 'HH24:MI:SS') $Time_Diff_Text FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $row['Project_ID']);
+            $query_select = sprintf('SELECT *, TO_CHAR(concat( "Final_Execution_Time" , " second")::interval, "HH24:MI:SS") $Time_Diff_Text FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $row['Project_ID']);
 
             $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
 
