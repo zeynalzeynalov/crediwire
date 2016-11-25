@@ -16,8 +16,8 @@
 
     if (isset($_CONTROLLER) && isset($_ACTION))
     {
-        $controller = $CONTROLLER;
-        $action     = $ACTION;
+        $controller = $_CONTROLLER;
+        $action     = $_ACTION;
     }
     else
     {
