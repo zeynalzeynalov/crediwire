@@ -16,7 +16,7 @@
     else
     {
         $controller = $_CONTROLLER;
-        $action     = 'main';
+        $action     = '';
     }
     else
     {
