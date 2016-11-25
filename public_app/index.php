@@ -6,12 +6,6 @@
     $_CONTROLLER = trim($_request[0]);
     $_ACTION     = trim($_request[1]);
 
-echo isset($_CONTROLLER) ;
-echo isset($_ACTION);
-
-echo $_CONTROLLER ;
-echo $_ACTION;
-
     if (empty($_CONTROLLER) && empty($_ACTION))
     {
         $controller = 'projects';
@@ -27,10 +21,7 @@ echo $_ACTION;
     {
         $controller = $_CONTROLLER;
         $action     = $_ACTION;
-    }       
-
-echo $controller;
-echo $action;
+    }
 
     require_once(dirname(dirname(__FILE__)).'/views/template.php');
 ?>
