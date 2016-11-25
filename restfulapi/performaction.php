@@ -31,7 +31,8 @@
 			$query_action = sprintf('UPDATE public."Project_Execution_Record"
 				SET 
 				"Ending_Time_Stamp" = NOW(),
-				"Is_Completed" = TRUE
+				"Is_Completed" = TRUE,
+				"Final_Execution_Time" = EXTRACT(EPOCH FROM (NOW() - "Starting_Time_Stamp")),
 				WHERE "Project_Execution_Record_ID" IN
 				(SELECT MAX("Project_Execution_Record_ID") FROM "Project_Execution_Record" WHERE "Project_ID" = %d)
 				AND
