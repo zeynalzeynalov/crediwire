@@ -18,7 +18,7 @@
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID );
 	
-		$query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $ID);
+		$query_select = sprintf('SELECT * FROM public.Project_Execution_Record WHERE Is_Complete" = TRUE AND Project_ID = %d ORDER BY Project_Execution_Record_ID ASC;', $ID);
 		$results = pg_query($dbConn, $query_select) or die('Query failed: ' . pg_last_error());
 		
 		if (!$results)
@@ -40,7 +40,7 @@
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID );
 	
-		$query_select = sprintf('SELECT * FROM public."Project" WHERE "Project_ID" = %d;', $ID);
+		$query_select = sprintf('SELECT * FROM public.Project WHERE Project_ID = %d;', $ID);
 		$results = pg_query($dbConn, $query_select) or die('Query failed: ' . pg_last_error());
 		
 		if (!$results)
