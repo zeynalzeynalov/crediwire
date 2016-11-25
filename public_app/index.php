@@ -9,6 +9,9 @@
 echo isset($_CONTROLLER) ;
 echo isset($_ACTION);
 
+echo $_CONTROLLER ;
+echo $_ACTION;
+
     if (isset($_CONTROLLER) && isset($_ACTION))
     {
         $controller = $_CONTROLLER;
