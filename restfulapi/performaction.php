@@ -19,7 +19,7 @@
 		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) Project_State;', $ID));
 	       echo sprintf('SELECT public.Check_Project_State(%d) Project_State;', $ID);
 		$row = pg_fetch_assoc($result_state);
-	      
+	        echo $row['Project_State'];
 		if( $row['Project_State'] == 'CLOSED' )
 		{
 			echo "insert";
