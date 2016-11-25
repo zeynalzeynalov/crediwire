@@ -25,7 +25,7 @@
 			$query_action = sprintf('INSERT INTO public.Project_Execution_Record (Starting_Time_Stamp, is_Completed, Project_ID) VALUES (NOW(), FALSE, %d);', $ID);
 			$result_action = pg_query($dbConn, $query_action) or die('Insert query failed: ' . pg_last_error());;
 			
-			echo "OPENED";		 
+			//echo "OPENED";		 
 		}
 		else if( $row['project_state'] == 'OPEN' )
 		 {
@@ -39,7 +39,7 @@
 				AND
 				is_Completed = FALSE;', $ID);
 			$result_action = pg_query($dbConn, $query_action) or die('Update query failed: ' . pg_last_error());;
-			echo "CLOSED";
+			//echo "CLOSED";
 		 }
 
 		pg_close($dbCon);
