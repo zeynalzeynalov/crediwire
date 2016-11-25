@@ -6,13 +6,14 @@
 
     echo $request;
 
-  
+    echo $_SERVER['PATH_INFO'];
 
-    $CONTROLLER = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
-    $ACTION = array_shift($request)+0;
+    $_CONTROLLER = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
+    $_ACTION = array_shift($request)+0;
+
     echo $CONTROLLER.'-'.$ACTION;
 
-    if (isset($CONTROLLER) && isset($ACTION))
+    if (isset($_CONTROLLER) && isset($_ACTION))
     {
         $controller = $CONTROLLER;
         $action     = $ACTION;
