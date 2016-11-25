@@ -4,10 +4,10 @@
     
     $_request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 
-    echo $request[0];
-    echo $request[1];
+    echo '[0]'.$request[0];
+    echo '[1]'.$request[1];
 
-    echo $_SERVER['PATH_INFO'];
+    echo '<br>server url:'.$_SERVER['PATH_INFO'];
 
     $_CONTROLLER = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($_request)));
     $_ACTION = array_shift($_request)+0;
