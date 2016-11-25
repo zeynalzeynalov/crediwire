@@ -16,20 +16,20 @@
 
     class Project {
 
-    public $Project_id;
-    public $Project_Title;
-    public $Project_Created_Date;
-    public $Project_State;
-    public $Project_Execution_Record;
+    public $project_id;
+    public $project_title;
+    public $project_created_date;
+    public $project_state;
+    public $project_execution_record;
         
     public function __construct($Project_id, $Project_Title, $Project_Created_Date, $Project_State, $timeRecordList)
     {
-        $this->Project_id = $Project_id;
-        $this->Project_Title = $Project_Title;
-        $this->Project_Created_Date = $Project_Created_Date;
-        $this->Project_State = $Project_State;
+        $this->project_id = $Project_id;
+        $this->project_title = $Project_Title;
+        $this->project_created_date = $Project_Created_Date;
+        $this->project_state = $Project_State;
       
-        $this->Project_Execution_Record = $timeRecordList;
+        $this->project_execution_record = $timeRecordList;
     }
     
     public function getButtonStringForProjectState()
