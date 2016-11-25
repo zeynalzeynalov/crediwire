@@ -1,6 +1,6 @@
 <?php
-    require_once('config/configuration.php');
-    require_once('includes/dbconnection.php');
+    require_once(dirname(dirname(__FILE__)).'/config/configuration.php');
+    require_once(dirname(dirname(__FILE__)).'/includes/dbconnection.php');
     
     $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 
