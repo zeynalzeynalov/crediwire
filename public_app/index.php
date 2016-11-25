@@ -17,5 +17,6 @@
         $action     = 'main';
     }
     
-    require_once(dirname(dirname(__FILE__)).'/views/template.php');
+    if($_CONTROLLER != "restfulapi")
+        require_once(dirname(dirname(__FILE__)).'/views/template.php');
 ?>
