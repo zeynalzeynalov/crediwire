@@ -10,13 +10,16 @@ function processAjaxRequest(js_project_id)
     } 
     else 
     {
-        var xmlhttpRecordTime = new XMLHttpRequest();
-        xmlhttpRecordTime.onreadystatechange = function()
+        var xmlhttpPROJECT = new XMLHttpRequest();
+        xmlhttpPROJECT.onreadystatechange = function()
         {
             if (this.readyState == 4 && this.status == 200)
             {       
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function()
+                var objArrayPROJECT = JSON.parse(this.responseText);
+                document.getElementById("ajaxResponseTotalProjectTimeContainer" + js_project_id).innerHTML = objArrayPROJECT[0].total_time_diff_text;
+
+                var xmlhttpTimeRecords = new XMLHttpRequest();
+                xmlhttpTimeRecords.onreadystatechange = function()
                 {
                     if (this.readyState == 4 && this.status == 200)
                     {
@@ -28,8 +31,7 @@ function processAjaxRequest(js_project_id)
                         }
 
                         document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = outputHtml;
-                        document.getElementById("ajaxResponseTotalProjectTimeContainer" + js_project_id).innerHTML = objArray[i].total_time_diff_text;
-                        
+              
 
                         if(document.getElementById("btnAjax_" + js_project_id).value == "Start working")
                         {
@@ -44,12 +46,12 @@ function processAjaxRequest(js_project_id)
                     }
                 };
 
-                xmlhttp.open("GET", "restfulapi/getjson.php/getProjectTimeRecords/" + js_project_id, true);
-                xmlhttp.send();
+                xmlhttpTimeRecords.open("GET", "restfulapi/getjson.php/getProjectTimeRecords/" + js_project_id, true);
+                xmlhttpTimeRecords.send();
             }
         }
         
-        xmlhttpRecordTime.open("GET", "restfulapi/performaction.php/manageProjectTimeRecord/" + js_project_id, true);
-        xmlhttpRecordTime.send();
+        xmlhttpPROJECT.open("GET", "restfulapi/performaction.php/manageProjectTimeRecord/" + js_project_id, true);
+        xmlhttpPROJECT.send();
     }
 }
