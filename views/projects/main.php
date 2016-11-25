@@ -10,18 +10,18 @@
         
       Project created on: <?= $project->Project_Created_Date ?>
         <br>
-      <input class="<?= $project->getButtonStringCssClassForProjectState() ?>" type="button" id="btnAjax_<?= $project->Project_ID ?>" value="<?= $project->getButtonStringForProjectState() ?>" onclick="processAjaxRequest(this.id)">
+      <input class="<?= $project->getButtonStringCssClassForProjectState() ?>" type="button" id="btnAjax_<?= $project->Project_id ?>" value="<?= $project->getButtonStringForProjectState() ?>" onclick="processAjaxRequest(this.id)">
 
       <br />
       <br />
-      <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_ID ?>" aria-expanded="true" aria-controls="collapseExample">
+      <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->Project_id ?>" aria-expanded="true" aria-controls="collapseExample">
       Show/hide
       </a>
         
 
-      <div class="collapse" id="collapseExample_<?= $project->Project_ID ?>">
+      <div class="collapse" id="collapseExample_<?= $project->Project_id ?>">
       <div class="well">
-      <p> <span id="ajaxResponseContainer<?= $project->Project_ID ?>">
+      <p> <span id="ajaxResponseContainer<?= $project->Project_id ?>">
         
         <?php foreach ($project->Project_Execution_Record as $timeRecord): ?>
             
