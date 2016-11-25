@@ -12,7 +12,7 @@
     $_CONTROLLER = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($_request)));
     $_ACTION = array_shift($_request)+0;
 
-    echo $CONTROLLER.'-'.$ACTION;
+    echo $_CONTROLLER.'-'.$_ACTION;
 
     if (isset($_CONTROLLER) && isset($_ACTION))
     {
