@@ -2,10 +2,9 @@
       function start($controller, $action)
       {
             require_once(dirname(dirname(__FILE__)).'/controllers/' . $controller . '_controller.php');
-            echo $controller;
-            echo $action;
             
-            switch($controller) {
+            switch($controller)
+            {
               case 'projects':
                   require_once(dirname(dirname(__FILE__)).'/models/project.php');
                   $controller = new ProjectsController();
