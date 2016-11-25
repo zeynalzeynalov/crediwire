@@ -46,8 +46,8 @@
     {
         $projectList = [];
         $dbCon = dbConnection::connectToDB();
-        $results = pg_query($dbCon, 'SELECT P.*, public.Check_Project_State(P."Project_ID") "Project_State"
-            FROM public."Project" P ORDER BY P."Project_ID" ASC') or die('Select query failed: ' . pg_last_error());
+        $results = pg_query($dbCon, 'SELECT P.*, public.Check_Project_State(P.Project_ID) Project_State
+            FROM public.Project P ORDER BY P.Project_ID ASC') or die('Select query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
         {
