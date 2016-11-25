@@ -2,13 +2,16 @@
 
     class Project_Execution_Record
     {
-      public $Starting_Time_Stamp;
-      public $Ending_Time_Stamp;
-      public function __construct($Starting_Time_Stamp, $Ending_Time_Stamp)
-      {
-      $this->Starting_Time_Stamp = $Starting_Time_Stamp;
-      $this->Ending_Time_Stamp = $Ending_Time_Stamp;
-      }
+        public $Starting_Time_Stamp;
+        public $Ending_Time_Stamp;
+        public $Time_Diff_Text;
+
+        public function __construct($Starting_Time_Stamp, $Ending_Time_Stamp, $Time_Diff_Text)
+        {
+          $this->Starting_Time_Stamp = $Starting_Time_Stamp;
+          $this->Ending_Time_Stamp = $Ending_Time_Stamp;
+          $this->Time_Diff_Text = $Time_Diff_Text;
+        }
     }
 
     class Project {
@@ -49,17 +52,14 @@
         while ($row = pg_fetch_assoc($results))
         {
             
-                 $timeRecordList = [];
-       $dbCon = dbConnection::connectToDB();
-       $query_select = sprintf('SELECT * FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $row['Project_ID']);
-       
-       $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
+            $timeRecordList = [];
+            $dbCon = dbConnection::connectToDB();
+            $query_select = sprintf('SELECT *, TO_CHAR(concat( Final_Execution_Time , ' second')::interval, 'HH24:MI:SS') $Time_Diff_Text FROM public."Project_Execution_Record" WHERE "Is_Completed" = TRUE AND "Project_ID" = %d ORDER BY "Project_Execution_Record_ID" ASC;', $row['Project_ID']);
 
-        while ($w = pg_fetch_assoc($r))
-          $timeRecordList[] = new Project_Execution_Record($w['Starting_Time_Stamp'], $w['Ending_Time_Stamp']);
+            $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
 
- 
-            
+            while ($w = pg_fetch_assoc($r))
+            $timeRecordList[] = new Project_Execution_Record($w['Starting_Time_Stamp'], $w['Ending_Time_Stamp'], $w['Time_Diff_Text']);
             
             //echo count($timeRecordList);
             
