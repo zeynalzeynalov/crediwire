@@ -4,8 +4,8 @@
     
     $_request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 
-    echo '[0]'.$request[0];
-    echo '[1]'.$request[1];
+    echo '[0]'.$_request[0];
+    echo '[1]'.$_request[1];
 
     echo '<br>server url:'.$_SERVER['PATH_INFO'];
 
