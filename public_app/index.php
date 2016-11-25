@@ -6,6 +6,9 @@
     $_CONTROLLER = trim($_request[0]);
     $_ACTION     = trim($_request[1]);
 
+echo isset($_CONTROLLER) ;
+echo isset($_ACTION);
+
     if (isset($_CONTROLLER) && isset($_ACTION))
     {
         $controller = $_CONTROLLER;
