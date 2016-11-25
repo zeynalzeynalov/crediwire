@@ -7,8 +7,6 @@
     $CONTROLLER = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
     $ACTION = array_shift($request)+0;
     
-    echo "HERE"
-        echo $CONTROLLER;
     if (isset($CONTROLLER) && isset($ACTION))
     {
         $controller = $CONTROLLER;
@@ -20,5 +18,5 @@
         $action     = 'main';
     }
     
-    //require_once('views/template.php');
+    require_once('views/template.php');
 ?>
