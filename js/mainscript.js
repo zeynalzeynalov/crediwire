@@ -29,6 +29,7 @@ function processAjaxRequest(js_project_id)
 
                         document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = outputHtml;
                         document.getElementById("ajaxResponseTotalProjectTimeContainer" + js_project_id).innerHTML = objArray[i].total_time_diff_text;
+                        
 
                         if(document.getElementById("btnAjax_" + js_project_id).value == "Start working")
                         {
