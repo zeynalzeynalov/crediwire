@@ -13,7 +13,6 @@
     }
     else
     if (isset($_CONTROLLER))
-    else
     {
         $controller = $_CONTROLLER;
         $action     = '';
