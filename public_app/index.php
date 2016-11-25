@@ -12,13 +12,13 @@ echo isset($_ACTION);
 echo $_CONTROLLER ;
 echo $_ACTION;
 
-    if ($_CONTROLLER === NULL && $_ACTION === NULL)
+    if (empty($_CONTROLLER) && empty($_ACTION))
     {
         $controller = 'projects';
         $action     = 'main';
     }
     else
-    if ($_ACTION === NULL)
+    if (empty($_ACTION))
     {
         $controller = $_CONTROLLER;
         $action     = '';
