@@ -9,8 +9,10 @@
       <div class="panel-body">
         
       Project created on: <?= $project->project_created_date ?>
-        <br>
+      <br>
+        
       Total spent time: <span id="ajaxResponseTotalProjectTimeContainer<?= $project->project_id ?>"><?= $project->total_time_diff_text ?></span>
+      <br>
       <input class="<?= $project->getButtonStringCssClassForProjectState() ?>" type="button" id="btnAjax_<?= $project->project_id ?>" value="<?= $project->getButtonStringForProjectState() ?>" onclick="processAjaxRequest(this.id)">
 
       <br />
@@ -18,20 +20,20 @@
       <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->project_id ?>" aria-expanded="true" aria-controls="collapseExample">
       Show / hide time record details
       </a>
-        
-        
 
       <div class="collapse" id="collapseExample_<?= $project->project_id ?>">
       <div class="well">
-      <p> <span id="ajaxResponseContainer<?= $project->project_id ?>">
-        
-        <?php foreach ($project->project_execution_record as $timeRecord): ?>
-            
-        <span><?= $timeRecord->starting_time_stamp ?> - <?= $timeRecord->ending_time_stamp ?> = <?= $timeRecord->time_diff_text ?> </span><br>
-                        
-        <?php endforeach; ?>
-        
-        </span></p>
+      <p>
+          <span id="ajaxResponseContainer<?= $project->project_id ?>">
+
+          <?php foreach ($project->project_execution_record as $timeRecord): ?>
+
+          <span><?= $timeRecord->starting_time_stamp ?> - <?= $timeRecord->ending_time_stamp ?> = <?= $timeRecord->time_diff_text ?> </span><br>
+
+          <?php endforeach; ?>
+
+          </span>
+      </p>
       </div>
       </div>
 
