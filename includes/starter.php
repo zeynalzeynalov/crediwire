@@ -13,20 +13,24 @@
               case 'help':
                   $controller = new HelpController();
               break;
+                         
+              case 'restfulapi':
+                  $controller = new RestfulapiController();
+              break;          
             }
 
             $controller->{ $action }();
       }
 
-      $controllerList = array('projects' => ['main', 'error'], 'help' => ['main', 'error', '']);
+      $controllerList = array('projects' => ['main', 'error'], 'help' => ['main', 'error', ''], 'restfulapi' => ['main', 'error']);
 
       if (array_key_exists($controller, $controllerList))
       {
           if (in_array($action, $controllerList[$controller]))
               start($controller, $action);
           else
-              start('projects', 'error');
+              start('help', 'error');
       } 
-      //else
-      //    start('projects', 'error');
+      else
+          start('help', 'error');
 ?>
