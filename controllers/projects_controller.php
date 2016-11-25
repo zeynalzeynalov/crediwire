@@ -9,7 +9,7 @@
 
             public function error()
             {
-                  require_once(dirname(dirname(__FILE__)).'/views/projects/error.php');
+                  require_once(dirname(dirname(__FILE__)).'/views/error.php');
             } 
       }
 ?>
