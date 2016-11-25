@@ -51,7 +51,12 @@
 		$dbConn = dbConnection::connectToDB();
 		$ID = pg_escape_string ($dbConn, $ID );
 	
-		$query_select = sprintf('SELECT * FROM public.Project WHERE Project_ID = %d;', $ID);
+		$query_select = sprintf('SELECT
+		
+		*,  
+		(select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') from project_execution_record where project_id = P.project_id) total_time_diff_text
+		
+		FROM public.Project WHERE Project_ID = %d;', $ID);
 		$results = pg_query($dbConn, $query_select) or die('Query failed: ' . pg_last_error());
 		
 		if (!$results)
