@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
+    RewriteCond %{REQUEST_URI} !/restfulapi$
     RewriteRule    ^$    public_app/      [L]
     RewriteRule    (.*)  public_app/$1    [L]
 </IfModule>
