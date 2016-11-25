@@ -8,19 +8,19 @@
       <div class="panel-body">
       
       <p>
-      DATABASE:
-      Server:     PostgreSQL VERSION 9.5.5 
-      Host:       ec2-54-217-213-203.eu-west-1.compute.amazonaws.com
-      Database:   dcreosvnjcrc0o
-      User:       phueqmfbfolrhb
-      Port:       5432
-      Password:   A2vfu6M2r5LhhxAdBA63VWCi6U
-      URI:        postgres://phueqmfbfolrhb:A2vfu6M2r5LhhxAdBA63VWCi6U@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/dcreosvnjcrc0oHeroku
-      CLI:        heroku pg:psql DATABASE_URL --app cready  
+      DATABASE:<br>
+      Server:     PostgreSQL VERSION 9.5.5<br>
+      Host:       ec2-54-217-213-203.eu-west-1.compute.amazonaws.com<br>
+      Database:   dcreosvnjcrc0o<br>
+      User:       phueqmfbfolrhb<br>
+      Port:       5432<br>
+      Password:   A2vfu6M2r5LhhxAdBA63VWCi6U<br>
+      URI:        postgres://phueqmfbfolrhb:A2vfu6M2r5LhhxAdBA63VWCi6U@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/dcreosvnjcrc0oHeroku<br>
+      CLI:        heroku pg:psql DATABASE_URL --app cready<br>
         
-      Tables:
-        project
-        project_execution_record
+      Tables:<br>
+        project<br>
+        project_execution_record<br>
       </p>
         
       </div>
