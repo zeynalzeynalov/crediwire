@@ -1,4 +1,4 @@
-<?php echo count($projects);  echo "id=".$projects[0]->Project_id ?>
+<?php echo count($projects);  echo "id=".$projects[0]->Project_Title ?>
 
 <?php foreach ($projects as $project): ?>
 
