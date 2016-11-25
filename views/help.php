@@ -6,7 +6,8 @@
         <h3 class="panel-title">Technical documentation of developed Project Time Management App.</h3>
       </div>
       <div class="panel-body">
-        
+      
+      <p>
       DATABASE:
       Server:     PostgreSQL VERSION 9.5.5 
       Host:       ec2-54-217-213-203.eu-west-1.compute.amazonaws.com
@@ -20,6 +21,7 @@
       Tables:
         project
         project_execution_record
+      </p>
         
       </div>
     </div>
