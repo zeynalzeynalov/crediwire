@@ -1,6 +1,7 @@
 <?php
-  function call($controller, $action) {
-    require_once('controllers/' . $controller . '_controller.php');
+  function call($controller, $action)
+  {
+    require_once(dirname(dirname(__FILE__)).'/controllers/' . $controller . '_controller.php');
 
     switch($controller) {
       case 'projects':
