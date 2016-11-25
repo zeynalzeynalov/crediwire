@@ -24,7 +24,7 @@ function processAjaxRequest(js_project_id)
                         var outputHtml = "";
                         for(var i = 0; i < objArray.length; i++)
                         {
-                            outputHtml += ('<span>' + objArray[i].starting_time_stamp + '    -    ' + objArray[i].ending_time_stamp + '     Spent: ' + objArray[i].time_diff_text</span><br>');
+                            outputHtml += ('<span>' + objArray[i].starting_time_stamp + '    -    ' + objArray[i].ending_time_stamp + '     Spent: ' + objArray[i].time_diff_text + '</span><br>');
                         }
 
                         document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = outputHtml;
