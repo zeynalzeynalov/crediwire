@@ -57,11 +57,15 @@
             $query_select = sprintf("SELECT *, TO_CHAR(interval '1 second' * final_execution_time, 'HH24:MI:SS') Time_Diff_Text FROM public.project_execution_Record WHERE Is_Completed = TRUE AND Project_ID = %d ORDER BY Project_Execution_Record_ID ASC;", $row['Project_ID']);
 
             $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
-
+                
+            echo 
+            
             while ($w = pg_fetch_assoc($r))
             {
+                echo $w['Starting_Time_Stamp'];
+                
                 $timeRecordList[] = new Project_Execution_Record($w['Starting_Time_Stamp'], $w['Ending_Time_Stamp'], $w['Time_Diff_Text']);
-                echo $w['Time_Diff_Text'];
+                echo $w['Time_Diff_Text']."<---";
             }
             echo count($timeRecordList);
             
