@@ -12,10 +12,17 @@
         $action     = $_ACTION;
     }
     else
+    if (isset($_CONTROLLER))
+    else
+    {
+        $controller = $_CONTROLLER;
+        $action     = 'main';
+    }
+    else
     {
         $controller = 'projects';
         $action     = 'main';
-    }
+    }       
 
     require_once(dirname(dirname(__FILE__)).'/views/template.php');
 ?>
