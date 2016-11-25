@@ -27,6 +27,6 @@
           else
               start('projects', 'error');
       } 
-      else
-          start('projects', 'error');
+      //else
+      //    start('projects', 'error');
 ?>
