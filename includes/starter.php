@@ -18,7 +18,7 @@
             $controller->{ $action }();
       }
 
-      $controllerList = array('projects' => ['main', 'error'], 'help' => ['main', 'error']);
+      $controllerList = array('projects' => ['main', 'error'], 'help' => ['main', 'error', '']);
 
       if (array_key_exists($controller, $controllerList))
       {
