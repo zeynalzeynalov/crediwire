@@ -10,13 +10,15 @@
         
       Project created on: <?= $project->project_created_date ?>
         <br>
+      Total spent time: <span id="ajaxResponseTotalProjectTimeContainer<?= $project->project_id ?>"><?= $project->total_time_diff_text ?></span>
       <input class="<?= $project->getButtonStringCssClassForProjectState() ?>" type="button" id="btnAjax_<?= $project->project_id ?>" value="<?= $project->getButtonStringForProjectState() ?>" onclick="processAjaxRequest(this.id)">
 
       <br />
       <br />
       <a class="btn btn-default btn-sm" role="button" data-toggle="collapse" href="#collapseExample_<?= $project->project_id ?>" aria-expanded="true" aria-controls="collapseExample">
-      Show/hide
+      Show / hide time record details
       </a>
+        
         
 
       <div class="collapse" id="collapseExample_<?= $project->project_id ?>">
