@@ -4,7 +4,8 @@
     
     $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
 
-    echo $request;
+    echo $request[0];
+    echo $request[1];
 
     echo $_SERVER['PATH_INFO'];
 
