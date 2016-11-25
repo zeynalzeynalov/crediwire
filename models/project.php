@@ -21,8 +21,9 @@
     public $project_created_date;
     public $project_state;
     public $project_execution_record;
+    public $total_time_diff_text;
         
-    public function __construct($Project_id, $Project_Title, $Project_Created_Date, $Project_State, $timeRecordList)
+    public function __construct($Project_id, $Project_Title, $Project_Created_Date, $Project_State, $timeRecordList, $total_time_diff_text)
     {
         $this->project_id = $Project_id;
         $this->project_title = $Project_Title;
@@ -30,6 +31,7 @@
         $this->project_state = $Project_State;
       
         $this->project_execution_record = $timeRecordList;
+        $this->total_time_diff_text = $total_time_diff_text;
     }
     
     public function getButtonStringForProjectState()
@@ -41,19 +43,25 @@
     {
         return ($this->project_state == "CLOSED" ? "btn btn-success" : "btn btn-danger");
     }
-    
+        
     public static function fetchAll()
     {
         $projectList = [];
         $dbCon = dbConnection::connectToDB();
-        $results = pg_query($dbCon, 'SELECT P.*, public.Check_Project_State(P.Project_id) Project_State
-            FROM public.Project P ORDER BY P.Project_id ASC') or die('Select query failed: ' . pg_last_error());
+        $results = pg_query($dbCon, 
+            "SELECT 
+            P.*,
+            public.Check_Project_State(P.Project_id) Project_State,
+            
+            (select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') from project_execution_record where project_id = P.project_id) total_time_diff_text
+
+            FROM public.Project P ORDER BY P.Project_id ASC") or die('Select query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
         {
             
             $timeRecordList = [];
-            $dbCon = dbConnection::connectToDB();
+
             $query_select = sprintf("SELECT 
             
             to_char(starting_time_stamp, 'DD-MM-YYYY HH24:MI:SS') starting_time_stamp,
@@ -69,8 +77,9 @@
                 $timeRecordList[] = new Project_Execution_Record($w['starting_time_stamp'], $w['ending_time_stamp'], $w['time_diff_text']);
             }
 
-            $projectList[] = new Project($row['project_id'], $row['project_title'], $row['project_created_date'], $row['project_state'], $timeRecordList); 
+            $projectList[] = new Project($row['project_id'], $row['project_title'], $row['project_created_date'], $row['project_state'], $timeRecordList, $row['total_time_diff_text']); 
         }
+        
         pg_close($dbCon);
         return $projectList;
     }
