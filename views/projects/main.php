@@ -1,3 +1,5 @@
+<?php echo count($projects);  echo $projects[0]->Project_id ?>
+
 <?php foreach ($projects as $project): ?>
 
 <div class="container">
