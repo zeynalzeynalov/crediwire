@@ -58,7 +58,7 @@
 
             $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
                 
-             
+            echo "HEREEEEEE model project";
             
             while ($w = pg_fetch_assoc($r))
             {
@@ -67,6 +67,7 @@
                 $timeRecordList[] = new Project_Execution_Record($w['Starting_Time_Stamp'], $w['Ending_Time_Stamp'], $w['Time_Diff_Text']);
                 echo $w['Time_Diff_Text']."<---";
             }
+            echo $query_select;
             echo count($timeRecordList);
             
           $projectList[] = new Project($row['Project_ID'], $row['Project_Title'], $row['Project_Created_Date'], $row['Project_State'], $timeRecordList); 
