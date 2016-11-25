@@ -18,5 +18,5 @@
         $action     = 'main';
     }
     
-    require_once('views/template.php');
+    require_once(dirname(dirname(__FILE__)).'/views/template.php');
 ?>
