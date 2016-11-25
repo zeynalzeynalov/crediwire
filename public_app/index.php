@@ -12,21 +12,21 @@ echo isset($_ACTION);
 echo $_CONTROLLER ;
 echo $_ACTION;
 
-    if (isset($_CONTROLLER) && isset($_ACTION))
+    if ($_CONTROLLER === NULL && $_ACTION === NULL)
     {
-        $controller = $_CONTROLLER;
-        $action     = $_ACTION;
+        $controller = 'projects';
+        $action     = 'main';
     }
     else
-    if (isset($_CONTROLLER))
+    if ($_ACTION === NULL)
     {
         $controller = $_CONTROLLER;
         $action     = '';
     }
     else
     {
-        $controller = 'projects';
-        $action     = 'main';
+        $controller = $_CONTROLLER;
+        $action     = $_ACTION;
     }       
 
 echo $controller;
