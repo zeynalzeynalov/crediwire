@@ -3,12 +3,12 @@
       {
             public function main()
             {
-                  require_once(dirname(dirname(__FILE__)).'/views/help/main.php');
+                  require_once(dirname(dirname(__FILE__)).'/views/help.php');
             }
         
             public function error()
             {
-                  require_once(dirname(dirname(__FILE__)).'/views/help/error.php');
+                  require_once(dirname(dirname(__FILE__)).'/views/error.php');
             } 
       }
 ?>
