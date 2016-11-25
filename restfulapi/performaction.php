@@ -43,6 +43,13 @@
 		 }
 
 		pg_close($dbCon);
+	      
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectdetails/".$ID);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_exec($ch);
+		curl_close($ch);
       }
 
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
