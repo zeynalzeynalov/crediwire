@@ -24,7 +24,7 @@ function processAjaxRequest(js_project_id)
                         var outputHtml = "";
                         for(var i = 0; i < objArray.length; i++)
                         {
-                            outputHtml += ('<span class="label label-info">' + objArray[i].Starting_Time_Stamp + ' - ' + objArray[i].Ending_Time_Stamp + '</span><br>');
+                            outputHtml += ('<span class="label label-info">' + objArray[i].starting_time_stamp + ' - ' + objArray[i].ending_time_stamp + '</span><br>');
                         }
 
                         document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = outputHtml;
