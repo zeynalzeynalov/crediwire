@@ -58,7 +58,7 @@
 
             $r = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
                 
-            echo 
+             
             
             while ($w = pg_fetch_assoc($r))
             {
