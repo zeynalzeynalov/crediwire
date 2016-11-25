@@ -16,11 +16,11 @@
 		$ID = pg_escape_string ($dbConn, $ID);
 	
 	      	// Firstly check project state
-		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) Project_State;', $ID));
-	       echo sprintf('SELECT public.Check_Project_State(%d) Project_State;', $ID);
+		$result_state = pg_query($dbConn, sprintf('SELECT public.Check_Project_State(%d) as project_state;', $ID));
+	       echo sprintf('SELECT public.Check_Project_State(%d) project_state;', $ID);
 		$row = pg_fetch_assoc($result_state);
-	        echo $row['Project_State'];
-		if( $row['Project_State'] == 'CLOSED' )
+	        echo "State:".$row['project_state'];
+		if( $row['project_state'] == 'CLOSED' )
 		{
 			echo "insert";
 			$query_action = sprintf('INSERT INTO public.Project_Execution_Record (Starting_Time_Stamp, is_Completed, Project_ID) VALUES (NOW(), FALSE, %d);', $ID);
@@ -30,7 +30,7 @@
 			
 			echo "OPENED";		 
 		}
-		else if( $row['Project_State'] == 'OPEN' )
+		else if( $row['project_state'] == 'OPEN' )
 		 {
 			$query_action = sprintf('UPDATE public.Project_Execution_Record
 				SET 
