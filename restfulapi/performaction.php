@@ -39,6 +39,9 @@
 				is_Completed = FALSE;', $ID);
 			$result_action = pg_query($dbConn, $query_action);
 			echo "CLOSED";	
+			
+			echo "here---------------";
+			echo "$query_action";
 		 }
 
 		pg_close($dbCon);
