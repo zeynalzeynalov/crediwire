@@ -1,5 +1,3 @@
-<?php echo count($projects);  echo "id=".$projects[0]->Project_Title ?>
-
 <?php foreach ($projects as $project): ?>
 
 <div class="container">
@@ -25,7 +23,7 @@
       <div class="well">
       <p> <span id="ajaxResponseContainer<?= $project->project_id ?>">
         
-        <?php foreach ($project->Project_Execution_Record as $timeRecord): ?>
+        <?php foreach ($project->project_execution_record as $timeRecord): ?>
             
         <span class="label label-info"><?= $timeRecord->starting_time_stamp ?> - <?= $timeRecord->ending_time_stamp ?> Total spent time = <?= $timeRecord->time_diff_text ?> </span><br>
                         
