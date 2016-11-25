@@ -26,7 +26,7 @@
 			$query_action = sprintf('INSERT INTO public.Project_Execution_Record (Starting_Time_Stamp, is_Completed, Project_ID) VALUES (NOW(), FALSE, %d);', $ID);
 			$result_action = pg_query($dbConn, $query_action);
 			
-			echo '<br>.'$query_action.'<br>';
+			echo '<br>'.$query_action.'<br>';
 			
 			echo "OPENED";		 
 		}
