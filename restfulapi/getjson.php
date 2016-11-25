@@ -27,9 +27,9 @@
 		final_execution_time,
 		
             	TO_CHAR(interval '1 second' * final_execution_time, 'HH24:MI:SS') time_diff_text,
-		(select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') from project_execution_record where project_id = P.project_id) total_time_diff_text
+		(select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') from project_execution_record where project_id = PER.project_id) total_time_diff_text
 		
-		FROM public.Project_Execution_Record WHERE is_completed = TRUE AND Project_ID = %d ORDER BY Project_Execution_Record_ID ASC;", $ID);
+		FROM public.Project_Execution_Record PER WHERE is_completed = TRUE AND Project_ID = %d ORDER BY Project_Execution_Record_ID ASC;", $ID);
 		$results = pg_query($dbConn, $query_select) or die('Query failed: ' . pg_last_error());
 		
 		if (!$results)
