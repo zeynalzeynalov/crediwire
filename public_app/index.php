@@ -3,8 +3,8 @@
     require_once(dirname(dirname(__FILE__)).'/includes/dbconnection.php');
     
     $_request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
-    $_CONTROLLER = $_request[0];
-    $_ACTION = $_request[1];
+    $_CONTROLLER = trim($_request[0]);
+    $_ACTION     = trim($_request[1]);
 
     if (isset($_CONTROLLER) && isset($_ACTION))
     {
