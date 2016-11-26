@@ -5,14 +5,15 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="exampleModalLabel">New project</h4>
       </div>
+          <form>    
+      
       <div class="modal-body">
-        <form>
+
           <div class="form-group">
             <label for="tb-project-title" class="control-label">Project title:</label>
             <input type="text" class="form-control" id="tb-project-title">
           </div>
 
-        </form>
         
       </div>
       <div class="modal-footer">
@@ -21,7 +22,10 @@
         
         <input class="btn btn-success" type="button" id="btnAddProject" data-dismiss="modal" value="Save project" onclick="processAjaxRequestAddNewProject(document.getElementById('tb-project-title').value)">
 
+
       </div>
+            
+                    </form>
     </div>
   </div>
 </div>
