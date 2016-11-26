@@ -82,6 +82,6 @@
         
         pg_close($dbCon);
         return $projectList;
-    }
+    }   
   }
 ?>
