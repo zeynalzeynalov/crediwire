@@ -1,5 +1,5 @@
 <?php
-	
+	//HTTP ACCESS CORS
 	header("Access-Control-Allow-Orgin: *");
 	header("Access-Control-Allow-Methods: GET");
 	header("Content-Type: application/json");
