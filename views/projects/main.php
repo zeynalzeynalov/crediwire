@@ -45,7 +45,7 @@
           <div class="alert alert-info" role="alert" id="message-alert-box">
           <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
           <span class="sr-only">Error:</span>
-          <span id="save-result"><h4>Let's start completing waiting projects!</h4></span>
+          <span id="save-result">Hey Bob! Let's start completing waiting projects!</span>
         </div>
 
 
