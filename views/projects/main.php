@@ -32,9 +32,6 @@
             Loading state
           </button>
 
-
-            
-
       </div>
     </div>
   </div>
