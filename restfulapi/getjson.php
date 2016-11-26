@@ -76,7 +76,9 @@
 	function getTotalProjectDurations()
 	{     
 		$dbConn = dbConnection::connectToDB();
-		$query_select = "select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') total_durations from project_execution_record;";
+		$query_select = "select project_title, COALESCE( sum(final_execution_time), 0) duration from project 
+			left join project_execution_record on project.project_id = project_execution_record.project_id
+			group by project.project_id order by project_title";
 
 		$result = pg_query($dbConn, $query_select) or die('Select query failed: ' . pg_last_error());
 
