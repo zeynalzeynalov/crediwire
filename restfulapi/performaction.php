@@ -65,9 +65,9 @@
 		pg_close($dbCon);	
 		
 		if (!$result_action)
-			echo "[{"message":"New project added!"}]";
+			echo '[{"message":"New project added!"}]';
 		else
-			echo "[{"message":"Error during project addition"}]";
+			echo '[{"message":"Error during project addition"}]';
 		
 		
 	}
