@@ -67,7 +67,7 @@
 			
 		
 		if ($result_action)
-			echo '[{"message":"New project added!"}]';
+			echo '[{"message":"New project <'.$projectTitle.'> added!"}]';
 		else
 			echo '[{"message":"Error during project addition!"}]';
 		
