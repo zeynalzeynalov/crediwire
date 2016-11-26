@@ -45,7 +45,7 @@
 		</div>
 		<div class="panel-body">
 		<div class="well" style="background-color: white;">
-		<div id="chart_div" style="width: 400px; height: 300px;"></div>
+		<div id="chart_div" style="width: 360px; height: 200px;"></div>
 		</div>
 		</div>
 		</div>
