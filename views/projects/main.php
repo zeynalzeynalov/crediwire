@@ -40,6 +40,30 @@
 $(document).ready(function(){
     $(".btn").click(function(){
         $(this).button('loading');
+      
+      
+      
+      var objArrayPROJECT = JSON.parse(this.responseText);
+
+                var xmlhttpTimeRecords = new XMLHttpRequest();
+                xmlhttpTimeRecords.onreadystatechange = function()
+                {
+                    if (this.readyState == 4 && this.status == 200)
+                    {
+                        var objArray = JSON.parse(this.responseText);
+                        var outputHtml = "";
+                        for(var i = 0; i < objArray.length; i++)
+                        {
+                            outputHtml += ('<span>' + objArray[i].starting_time_stamp + ' - ' + objArray[i].ending_time_stamp + ' = ' + objArray[i].time_diff_text + '</span><br>');
+                        }
+                    }
+                };
+
+                xmlhttpTimeRecords.open("GET", "restfulapi/getjson.php/getProjectTimeRecords/1", true);
+                xmlhttpTimeRecords.send();
+      
+      
+      
         $(this).button('reset');
     });   
 });
