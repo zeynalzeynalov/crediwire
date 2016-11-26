@@ -32,9 +32,16 @@
 				// Create our data table out of JSON data loaded from server.
 				var data = new google.visualization.DataTable(jsonData);
 
+				var options = {
+				  title: 'Project execution summary %',
+				  is3D: true,
+				  width: 400,
+				  height: 300
+				};
+				
 				// Instantiate and draw our chart, passing in some options.
 				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-				chart.draw(data, {width: 400, height: 240});
+				chart.draw(data, options);
 			}
 		</script>
 	</head>
