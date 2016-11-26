@@ -10,8 +10,7 @@ function processAjaxRequest(js_project_id)
     } 
     else 
     {
-        $('#' + 'btnAjax_' + js_project_id).on('click', function () {
-        var $btnStartStop = $(this).button('loading')    
+        var $btnStartStop = $(this).button('loading');   
         
         var xmlhttpPROJECT = new XMLHttpRequest();
         xmlhttpPROJECT.onreadystatechange = function()
