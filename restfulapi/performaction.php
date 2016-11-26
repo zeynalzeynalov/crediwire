@@ -60,8 +60,6 @@
 		$dbConn = dbConnection::connectToDB();
 		$projectTitle = pg_escape_string ($dbConn, $projectTitle);
 		
-		echo $projectTitle;
-		
 		$query_action = sprintf("
 		INSERT INTO public.project(
 		project_title, project_created_date)
