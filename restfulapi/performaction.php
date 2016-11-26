@@ -69,10 +69,10 @@
 		$result_action = pg_query($dbConn, $query_action);
 			
 		
-		if (!$result_action)
-			echo '[{"message":"New project added!'.$query_action.pg_last_error().'"}]';
+		if ($result_action)
+			echo '[{"message":"New project added!"}]';
 		else
-			echo '[{"message":"Error during project addition '.$query_action.pg_last_error().'"}]';
+			echo '[{"message":"Error during project addition!"}]';
 		
 		pg_close($dbConn);
 	}
