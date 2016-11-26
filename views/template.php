@@ -18,31 +18,31 @@
     
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+    
+    // Load the Visualization API and the piechart package.
+    google.charts.load('current', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+      
+    function drawChart() {
+      var jsonData = $.ajax({
+          url: "https://crediwire.herokuapp.com/restfulapi/getjson.php/getTotalProjectDurations/index.php",
+          dataType: "json",
+          async: false
+          }).responseText;
+          
+	  alert('hello');
+	    
+	    alert(jsonData);
+	    
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
 
-	  var xmlhttpChart = new XMLHttpRequest();
-        xmlhttpChart.onreadystatechange = function()
-        {
-            if (this.readyState == 4 && this.status == 200)
-            {       
-				var objArrayPROJECT = JSON.parse(this.responseText);
-				var dataTableData = google.visualization.arrayToDataTable(objArrayPROJECT);
-				var options = {
-				title: 'My Daily Activities',
-				is3D: true,
-				};
-				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-				alert('hellp chart');
-				chart.draw(data, options);
-            }
-        }
-        
-        xmlhttpChart.open("GET", "restfulapi/getjson.php/getTotalProjectDurations/", true);
-        xmlhttpChart.send();        
-        
-      }
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, {width: 400, height: 240});
+    }
     </script>
     
     
