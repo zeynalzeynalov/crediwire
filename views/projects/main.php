@@ -1,6 +1,3 @@
-
-
-
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -24,20 +21,12 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         
         
-        <input class="btn btn-success" type="button" id="btnAddProject" data-dismiss="modal" value="add project" onclick="processAjaxRequestAddNewProject('new project')">
+        <input class="btn btn-success" type="button" id="btnAddProject" data-dismiss="modal" value="add project" onclick="processAjaxRequestAddNewProject(document.getElementById('tb-project-title').value)">
 
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  $('#myButton').on('click', function () {
-    var $btn = $(this).button('loading')
-    alert('hoppa');
-    $btn.button('reset')
-  })
-</script>
 
 <div class="container">
   <div class="panel-group">
