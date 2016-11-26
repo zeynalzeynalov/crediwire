@@ -31,6 +31,8 @@
           <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
             Loading state
           </button>
+        
+        <input class="btn btn-success" type="button" id="btndummy" value="add project" onclick="processAjaxRequestAddNewProject('new project')">
 
       </div>
     </div>
