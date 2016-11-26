@@ -13,7 +13,30 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/mainscript.js"></script>
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>    
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
+			// Load the Visualization API and the piechart package.
+			google.charts.load('current', {'packages':['corechart']});
+
+			// Set a callback to run when the Google Visualization API is loaded.
+			google.charts.setOnLoadCallback(drawChart);
+
+			function drawChart()
+			{
+				var jsonData = $.ajax({
+				url: "restfulapi/getjson.php/getTotalProjectDurations/index.php",
+				dataType: "json",
+				async: false
+				}).responseText;
+
+				// Create our data table out of JSON data loaded from server.
+				var data = new google.visualization.DataTable(jsonData);
+
+				// Instantiate and draw our chart, passing in some options.
+				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+				chart.draw(data, {width: 400, height: 240});
+			}
+		</script>
 	</head>
 	<body>
       <nav class="navbar navbar-default">
