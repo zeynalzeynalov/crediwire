@@ -63,6 +63,13 @@
 		VALUES (%d, NOW());", $ID);
 		$result_action = pg_query($dbConn, $query_action) or die('Insert query failed: ' . pg_last_error());;
 		pg_close($dbCon);	
+		
+		if (!$result_action)
+			echo "[{"message":"New project added!"}]"
+		else
+			echo "[{"message":"Error during project addition"}]"
+		
+		
 	}
 
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
