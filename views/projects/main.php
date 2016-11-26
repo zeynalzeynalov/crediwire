@@ -35,12 +35,21 @@
 </div>
 
 
+
+
           <script>
 
 $(document).ready(function(){
-    $(".btn").click(function(){
-alert('5');
-    });   
+ 
+  
+    $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    alert('5');
+    $btn.button('reset')
+  })
+  
+  
+  
 });
 </script>
 
