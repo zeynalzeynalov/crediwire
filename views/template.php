@@ -46,7 +46,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://crediwire.herokuapp.com/help/main">Help</a></li>
+            <li><a href="https://crediwire.herokuapp.com/help/main">HELP (Documentation)</a></li>
             <li><a href="https://crediwire.herokuapp.com/">Welcome, <b>Bob!</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
