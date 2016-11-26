@@ -3,14 +3,6 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 
 
-<script>
-  $('#btn-save-project').on('click', function () {
-
-    alert('btn-save-project');
-    
-  })
-</script>
-
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -29,6 +21,18 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="btn-save-project">Save</button>
+        
+          <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+            Loading state
+          </button>
+
+          <script>
+            $('#myButton').on('click', function () {
+              var $btn = $(this).button('loading')
+              // business logic...
+              $btn.button('reset')
+            })
+          </script>
       </div>
     </div>
   </div>
