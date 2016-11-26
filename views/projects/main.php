@@ -16,7 +16,13 @@
             <label for="tb-project-title" class="control-label">Project title:</label>
             <input type="text" class="form-control" id="tb-project-title">
           </div>
+          <div class="alert alert-info" role="alert">
+          <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <span id="save-result">New project added!</span>
+        </div>
         </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -44,7 +50,25 @@ $(document).ready(function(){
   
     $('#myButton').on('click', function () {
     var $btn = $(this).button('loading')
-    alert('5');
+
+    
+      
+        var xmlhttpAddProject = new XMLHttpRequest();
+        xmlhttpAddProject.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {       
+                var objArrayPROJECT = JSON.parse(this.responseText);
+                document.getElementById("save-result").innerHTML = objArrayPROJECT[0].total_time_diff_text;
+
+            }
+        }
+        
+        xmlhttpAddProject.open("GET", "restfulapi/performaction.php/manageProjectTimeRecord/1", true);
+        xmlhttpAddProject.send();
+      
+      
+      
     $btn.button('reset')
   })
   
