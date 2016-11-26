@@ -82,6 +82,7 @@
 
       </div>
       </div>
+      <br>
 
 <?php endforeach; ?>
   </div>
