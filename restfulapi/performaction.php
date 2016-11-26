@@ -78,6 +78,8 @@
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
       $ID = array_shift($request)+0;
 
+echo $ID;
+
 	if(strtoupper($RESOURCE) == strtoupper("manageProjectTimeRecord") && isset($ID))
 		manageProjectTimeRecord($ID);
 	else
