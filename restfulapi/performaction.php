@@ -61,7 +61,7 @@
 		INSERT INTO public.project(
 		project_title, project_created_date)
 		VALUES (%d, NOW());", $ID);
-		$result_action = pg_query($dbConn, $query_action) or die('Insert query failed: ' . pg_last_error());;
+		$result_action = pg_query($dbConn, $query_action);
 		pg_close($dbCon);	
 		
 		if (!$result_action)
