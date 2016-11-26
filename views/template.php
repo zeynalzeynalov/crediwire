@@ -36,6 +36,9 @@
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        
+        alert('hellp chart');
+        
         chart.draw(data, options);
       }
     </script>
