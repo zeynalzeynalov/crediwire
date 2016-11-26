@@ -37,14 +37,19 @@
 
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 		
-				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChartDiv" aria-expanded="false" aria-controls="collapseExample">
-		Show Dashboard Chart
-		</button>
-		<div class="collapse" id="collapseChartDiv">
-			<div class="well" style="background-color: white;">
-			<div id="chart_div" style="width: 400px; height: 300px;"></div>
+		<br>
+		
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+		<h3 class="panel-title">Project Name: <?= $project->project_title ?></h3>
+		</div>
+		<div class="panel-body">
+		<div class="well" style="background-color: white;">
+		<div id="chart_div" style="width: 400px; height: 300px;"></div>
 		</div>
 		</div>
+		</div>
+		
 		
 		<br>
 		<br>
