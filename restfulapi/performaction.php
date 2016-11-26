@@ -60,7 +60,7 @@
 		$query_action = sprintf("
 		INSERT INTO public.project(
 		project_title, project_created_date)
-		VALUES (%d, NOW());", $ID);
+		VALUES (%d, NOW());", $projectTitle);
 		$result_action = pg_query($dbConn, $query_action);
 		pg_close($dbCon);	
 		
