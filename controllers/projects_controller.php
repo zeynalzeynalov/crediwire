@@ -4,7 +4,7 @@
             public function main()
             {
                   $projects = Project::fetchAll();
-                  $projects_total_durations = Project::getTotalProjectDurations();
+
                   require_once(dirname(dirname(__FILE__)).'/views/projects/main.php');
             }
 
