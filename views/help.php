@@ -23,7 +23,7 @@
         <b> project</b>
             <span>Columns:
                   <b>project_id integer (PK)</b>,
-                  project_title character varying,
+                  project_title character varying (30),
                   project_created_date date,
             </span>
         
