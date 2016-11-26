@@ -35,8 +35,8 @@
 				var options = {
 				  title: 'Project execution summary %',
 				  is3D: true,
-				  width: 400,
-				  height: 300
+				  width: 360,
+				  height: 200
 				};
 				
 				// Instantiate and draw our chart, passing in some options.
