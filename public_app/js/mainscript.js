@@ -45,6 +45,8 @@ function processAjaxRequest(js_project_id)
                             document.getElementById("btnAjax_" + js_project_id).value = "Start working";
                             document.getElementById("btnAjax_" + js_project_id).className = "btn btn-success"; 
                         }
+                        
+                        drawChart();
                     }
                 };
 
