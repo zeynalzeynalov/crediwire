@@ -16,10 +16,10 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         
         
-        <input class="btn btn-success" type="button" id="btnAddProject" data-dismiss="modal" value="add project" onclick="processAjaxRequestAddNewProject(document.getElementById('tb-project-title').value)">
+        <input class="btn btn-success" type="button" id="btnAddProject" data-dismiss="modal" value="Save project" onclick="processAjaxRequestAddNewProject(document.getElementById('tb-project-title').value)">
 
       </div>
     </div>
