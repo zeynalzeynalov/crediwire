@@ -1,10 +1,5 @@
-<center>
-          <div class="alert alert-info" role="alert" id="message-alert-box">
-          <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
-          <span class="sr-only">Error:</span>
-          <span id="save-result"><h4>Let's start completing waiting projects!</h4></span>
-        </div>
- </center>
+
+
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 
@@ -44,12 +39,19 @@
   })
 </script>
 
+<div class="container">
+  <div class="panel-group">
+
+          <div class="alert alert-info" role="alert" id="message-alert-box">
+          <span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+          <span id="save-result"><h4>Let's start completing waiting projects!</h4></span>
+        </div>
 
 
 <?php foreach ($projects as $project): ?>
 
-<div class="container">
-  <div class="panel-group">
+
       <div class="panel panel-primary">
       <div class="panel-heading">
       <h3 class="panel-title">Project Name: <?= $project->project_title ?></h3>
@@ -87,6 +89,7 @@
 
       </div>
       </div>
+
+<?php endforeach; ?>
   </div>
 </div>
-<?php endforeach; ?>
