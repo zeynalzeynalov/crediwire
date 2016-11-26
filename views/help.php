@@ -20,14 +20,14 @@
 
       <pre>
       TABLES [2]:
-        <b>- project</b>
+        <b> project</b>
             <span>Columns:
                   <b>project_id integer (PK)</b>,
                   project_title character varying,
                   project_created_date date,
             </span>
         
-        <b>- project_execution_record</b>
+        <b> project_execution_record</b>
             <span>Columns:
                   <b>project_execution_record_id integer (PK)</b>,
                   starting_time_stamp timestamp,
@@ -38,26 +38,25 @@
             </span>
         </pre>
         <pre>
-        FUNCTIONS [2]:
-        <b>check_project_state( project_id integer )</b>
+        PostgreSQL FUNCTIONS [2]:
+        <b> check_project_state( project_id integer )</b>
               Check that indicated project is Closed or Open.
         
-        <b>get_timestamp_diff( project_id integer )</b>
+        <b> get_timestamp_diff( 	start timestamp, end timestamp) RETURNS character varying</b>
               Get time interval between ending and starting time stamps in format of 'HH24:MI:SS'.
         </pre>
-
       </pre>
       
       <pre>
       APPLICATION:
         Language:     PHP
-        Markup:       CSS, Bootstrap v3.3.7
+        Markup:       HTML, CSS, <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a>
         Frontend:     Javascript, AJAX, Json
         Pattern:      MVC
         APIs design:  RESTful
         
         <b>Directory structure:</b>
-            root/
+            <a href="https://github.com/zeynalzeynalov/crediwire" target="_blank">root/</a>
                 config/
                       configuration.php
                 controllers/
