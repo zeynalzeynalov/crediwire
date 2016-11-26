@@ -32,7 +32,7 @@
 		<div class="alert alert-info" role="alert" id="message-alert-box">
 			<span class="glyphicon glyphicon glyphicon-ok" aria-hidden="true"></span>
 			<span class="sr-only">Error:</span>
-			<span id="save-result">Hey Bob! Let's start completing waiting projects!</span>
+			<span id="save-result">Hey Bob! Let's start coding!</span>
 		</div>
 
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
