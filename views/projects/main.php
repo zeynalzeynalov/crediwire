@@ -45,8 +45,8 @@
 		Show Dashboard Chart
 		</button>
 		<div class="collapse" id="collapseChartDiv">
-		<div class="well">
-		<div id="chart_div" style="width: 200px; height: 200px;"></div>
+			<div class="well" style="background-color: white;">
+			<div id="chart_div" style="width: 400px; height: 400px;"></div>
 		</div>
 		</div>
 		
