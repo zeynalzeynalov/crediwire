@@ -6,7 +6,47 @@
         <h3 class="panel-title">Technical documentation of developed Project Time Management App.</h3>
       </div>
       <div class="panel-body">
-      
+
+      <pre>
+      APPLICATION:
+        Language:     PHP
+        Markup:       HTML, CSS, <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a>
+        Frontend:     Javascript, AJAX, Json
+        Pattern:      MVC
+        APIs design:  RESTful
+        Development enviroment: <a href="https://www.heroku.com/" target="_blank">Heroku: Cloud Application Platform</a>
+        
+        <b>Directory structure:</b>
+            <a href="https://github.com/zeynalzeynalov/crediwire" target="_blank">root/</a>
+                config/
+                      configuration.php
+                controllers/
+                      help_controller.php
+                      projects_controller.php
+                includes/
+                      dbconnection.php
+                      starter.php
+                models/
+                      project.php
+                public_app/
+                      js/
+                          mainscript.js
+                      .htaccess
+                      index.php
+                restfulapi/
+                      getjson.php
+                      performaction.php
+                views/
+                      projects/
+                          main.php
+                          error.php
+                      template.php
+                      help.php
+                      error.php
+                .htaccess
+                index.php
+      </pre>
+        
       <pre>
       DATABASE:
       Server:     PostgreSQL VERSION 9.5.5
@@ -46,45 +86,6 @@
               Get time interval between ending and starting time stamps in format of 'HH24:MI:SS'.
         </pre>
       </pre>
-      
-      <pre>
-      APPLICATION:
-        Language:     PHP
-        Markup:       HTML, CSS, <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3</a>
-        Frontend:     Javascript, AJAX, Json
-        Pattern:      MVC
-        APIs design:  RESTful
-        
-        <b>Directory structure:</b>
-            <a href="https://github.com/zeynalzeynalov/crediwire" target="_blank">root/</a>
-                config/
-                      configuration.php
-                controllers/
-                      help_controller.php
-                      projects_controller.php
-                includes/
-                      dbconnection.php
-                      starter.php
-                models/
-                      project.php
-                public_app/
-                      js/
-                          mainscript.js
-                      .htaccess
-                      index.php
-                restfulapi/
-                      getjson.php
-                      performaction.php
-                views/
-                      projects/
-                          main.php
-                          error.php
-                      template.php
-                      help.php
-                      error.php
-                .htaccess
-                index.php
-        </pre>
         
       </div>
     </div>
