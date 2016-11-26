@@ -36,7 +36,7 @@
 				  title: 'Project execution summary %',
 				  is3D: true,
 				  width: 360,
-				  height: 200
+				  height: 250
 				};
 				
 				// Instantiate and draw our chart, passing in some options.
