@@ -1,6 +1,6 @@
 <?php
       header("Access-Control-Allow-Orgin: *");
-      header("Access-Control-Allow-Methods: *");
+      header("Access-Control-Allow-Methods: GET");
       header("Content-Type: application/json");
 
       require_once(dirname(dirname(__FILE__)).'/config/configuration.php');
