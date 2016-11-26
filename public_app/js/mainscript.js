@@ -10,6 +10,9 @@ function processAjaxRequest(js_project_id)
     } 
     else 
     {
+        $('#' + 'btnAjax_' + js_project_id).on('click', function () {
+        var $btnStartStop = $(this).button('loading')    
+        
         var xmlhttpPROJECT = new XMLHttpRequest();
         xmlhttpPROJECT.onreadystatechange = function()
         {
@@ -53,5 +56,8 @@ function processAjaxRequest(js_project_id)
         
         xmlhttpPROJECT.open("GET", "restfulapi/performaction.php/manageProjectTimeRecord/" + js_project_id, true);
         xmlhttpPROJECT.send();
+                
+                
+       $btnStartStop.button('reset');        
     }
 }
