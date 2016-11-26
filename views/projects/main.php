@@ -35,10 +35,6 @@
 			<span id="save-result">Hey Bob! Let's start completing waiting projects!</span>
 		</div>
 
-
-		
-		
-		
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 		
 				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChartDiv" aria-expanded="false" aria-controls="collapseExample">
@@ -46,7 +42,7 @@
 		</button>
 		<div class="collapse" id="collapseChartDiv">
 			<div class="well" style="background-color: white;">
-			<div id="chart_div" style="width: 400px; height: 400px;"></div>
+			<div id="chart_div" style="width: 400px; height: 300px;"></div>
 		</div>
 		</div>
 		
