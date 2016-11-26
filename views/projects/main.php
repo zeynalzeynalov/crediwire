@@ -42,8 +42,7 @@ $(document).ready(function(){
         $(this).button('loading');
       
       
-      
-      var objArrayPROJECT = JSON.parse(this.responseText);
+
 
                 var xmlhttpTimeRecords = new XMLHttpRequest();
                 xmlhttpTimeRecords.onreadystatechange = function()
