@@ -27,7 +27,7 @@
       
     function drawChart() {
       var jsonData = $.ajax({
-          url: "https://crediwire.herokuapp.com/restfulapi/getjson.php/getTotalProjectDurations/index.php",
+          url: "restfulapi/getjson.php/getTotalProjectDurations/index.php",
           dataType: "json",
           async: false
           }).responseText;
