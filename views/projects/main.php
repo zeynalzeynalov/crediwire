@@ -35,7 +35,8 @@
           <span id="save-result">Hey Bob! Let's start completing waiting projects!</span>
         </div>
 
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
+<br>
 <br>
 <?php foreach ($projects as $project): ?>
 
