@@ -17,28 +17,29 @@
       Password:   A2vfu6M2r5LhhxAdBA63VWCi6U<br>
       URI:        postgres://phueqmfbfolrhb:A2vfu6M2r5LhhxAdBA63VWCi6U@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/dcreosvnjcrc0oHeroku<br>
       CLI:        heroku pg:psql DATABASE_URL --app cready<br><br><br>
+      </p>
         
       TABLES:<br><br>
         <b>- project</b><br>
-        <span>Columns:
-              <b>project_id integer (PK)</b>,
-              project_title character varying,
-              project_created_date date,
+        <span>Columns:<br>
+              <b>project_id integer (PK)</b>,<br>
+              project_title character varying,<br>
+              project_created_date date,<br>
         </span>
         
         <b>- project_execution_record</b><br>
-        <span>Columns:
-              <b>project_execution_record_id integer (PK)</b>,
+        <span>Columns:<br>
+              <b>project_execution_record_id integer (PK)</b>,<br>
 
-              starting_time_stamp timestamp,
-              ending_time_stamp timestamp,
-              is_completed boolean,
-              project_id integer (FK),
-              final_execution_time bigint,
+              starting_time_stamp timestamp,<br>
+              ending_time_stamp timestamp,<br>
+              is_completed boolean,<br>
+              project_id integer (FK),<br>
+              final_execution_time bigint,<br>
         </span>
         
         <br>
-      </p>
+      
         
       </div>
     </div>
