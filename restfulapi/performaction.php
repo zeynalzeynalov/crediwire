@@ -52,9 +52,25 @@
 		curl_close($ch);
       }
 
+	function addNewProject($projectTitle)
+	{
+		$dbConn = dbConnection::connectToDB();
+		$projectTitle = pg_escape_string ($dbConn, $projectTitle);
+
+		$query_action = sprintf("
+		INSERT INTO public.project(
+		project_title, project_created_date)
+		VALUES (%d, NOW());", $ID);
+		$result_action = pg_query($dbConn, $query_action) or die('Insert query failed: ' . pg_last_error());;
+		pg_close($dbCon);	
+	}
+
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
       $ID = array_shift($request)+0;
 
-      if(strtoupper($RESOURCE) == strtoupper("manageProjectTimeRecord") && isset($ID))
-            manageProjectTimeRecord($ID);
+	if(strtoupper($RESOURCE) == strtoupper("manageProjectTimeRecord") && isset($ID))
+		manageProjectTimeRecord($ID);
+	else
+	if(strtoupper($RESOURCE) == strtoupper("addNewProject") && isset($ID))
+		addNewProject($ID);
 ?>
