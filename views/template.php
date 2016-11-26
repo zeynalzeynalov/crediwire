@@ -68,7 +68,8 @@
           <ul class="dropdown-menu">
             <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectDetails/1" target="_blank">API - Get Project Details (Project ID = 1)</a></li>
             <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectTimeRecords/1" target="_blank">API - Get Project Time Records (Project ID = 1)</a></li>
-            <li><a href="https://crediwire.herokuapp.com/restfulapi/performaction.php/addnewproject/Test_Project" target="_blank">API - Add New Project (Title: Test Project)</a></li>            
+            <li><a href="https://crediwire.herokuapp.com/restfulapi/performaction.php/addnewproject/Test_Project" target="_blank">API - Add New Project (Title: Test Project)</a></li>
+	    <li><a href="restfulapi/getjson.php/getTotalProjectDurations/index.php" target="_blank">API - Get Pie Chart Data</a></li>            		  
           </ul>
         </li>
           </ul>
