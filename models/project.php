@@ -43,6 +43,19 @@
     {
         return ($this->project_state == "CLOSED" ? "btn btn-success" : "btn btn-danger");
     }
+    
+    public static function getTotalProjectDurations()
+    {     
+        $query_select = "select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') total_durations from project_execution_record;";
+
+        $result = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
+        
+        if($result)
+        {
+            $row = pg_fetch_assoc($result)
+            return $row['total_durations'];
+        }
+    }
         
     public static function fetchAll()
     {
