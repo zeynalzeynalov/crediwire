@@ -40,43 +40,6 @@
   </div>
 </div>
 
-
-
-
-          <script>
-
-$(document).ready(function(){
- 
-  
-    $('#myButton').on('click', function () {
-    var $btn = $(this).button('loading')
-
-    
-      
-        var xmlhttpAddProject = new XMLHttpRequest();
-        xmlhttpAddProject.onreadystatechange = function()
-        {
-            if (this.readyState == 4 && this.status == 200)
-            {       
-                var objArrayPROJECT = JSON.parse(this.responseText);
-                document.getElementById("save-result").innerHTML = objArrayPROJECT[0].total_time_diff_text;
-
-            }
-        }
-        
-        xmlhttpAddProject.open("GET", "restfulapi/performaction.php/manageProjectTimeRecord/1", true);
-        xmlhttpAddProject.send();
-      
-      
-      
-    $btn.button('reset')
-  })
-  
-  
-  
-});
-</script>
-
 <?php foreach ($projects as $project): ?>
 
 <div class="container">
