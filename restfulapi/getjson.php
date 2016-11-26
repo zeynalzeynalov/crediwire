@@ -73,6 +73,20 @@
 		pg_close($dbCon);
 	}
 
+	function getTotalProjectDurations()
+	{     
+		$query_select = "select TO_CHAR(interval '1 second' * sum(final_execution_time), 'HH24:MI:SS') total_durations from project_execution_record;";
+
+		$result = pg_query($dbCon, $query_select) or die('Select query failed: ' . pg_last_error());
+
+		echo '[';
+		for ($i=0; $i < pg_num_rows ($result); $i++)
+			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($result));
+		echo ']';
+
+		pg_close($dbCon);
+	}
+
 	$RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
 	$ID = array_shift($request)+0;
 	
@@ -81,4 +95,7 @@
 	else
 	if(strtoupper($RESOURCE) == strtoupper("getProjectDetails") && isset($ID))	
 		getProjectDetails($ID);
+	else
+	if(strtoupper($RESOURCE) == strtoupper("getTotalProjectDurations"))	
+		getTotalProjectDurations();
 ?>
