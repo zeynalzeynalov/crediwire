@@ -39,6 +39,9 @@
           <span id="save-result">Hey Bob! Let's start completing waiting projects!</span>
         </div>
 
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+    
+    
 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 <br>
 <br>
