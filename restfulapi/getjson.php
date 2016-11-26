@@ -82,10 +82,19 @@
 
 		$result = pg_query($dbConn, $query_select) or die('Select query failed: ' . pg_last_error());
 
-		echo '[';
-		for ($i=0; $i < pg_num_rows ($result); $i++)
-			echo ( $i>0 ? ',' : '').json_encode(pg_fetch_object ($result));
-		echo ']';
+		echo '{
+		"cols": [
+		{"id":"","label":"Topping","pattern":"","type":"string"},
+		{"id":"","label":"Slices","pattern":"","type":"number"}
+		],
+		"rows": [';
+
+		while ($row = pg_fetch_assoc($result))
+		{
+			echo '{"c":[{"v":"'.$row['project_title'].'","f":null},{"v":'.$row['duration'].',"f":null}]}';
+		}
+
+		echo ']}';
 
 		pg_close($dbConn);
 	}
