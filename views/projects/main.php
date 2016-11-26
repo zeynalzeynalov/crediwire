@@ -40,6 +40,16 @@
   </div>
 </div>
 
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    alert('hoppa');
+    $btn.button('reset')
+  })
+</script>
+
+
+
 <?php foreach ($projects as $project): ?>
 
 <div class="container">
