@@ -1,6 +1,7 @@
-
-document.getElementById("tb-project-title").required = true;
-
+$(document).ready(function()
+{
+    document.getElementById("tb-project-title").required = true;
+});
 
 function processAjaxRequest(js_project_id)
 {
