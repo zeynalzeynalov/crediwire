@@ -35,7 +35,16 @@
 			<span id="save-result">Hey Bob! Let's start completing waiting projects!</span>
 		</div>
 
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChartDiv" aria-expanded="false" aria-controls="collapseExample">
+		Show Dashboard Chart
+		</button>
+		<div class="collapse" id="collapseChartDiv">
+		<div class="well">
 		<div id="chart_div" style="width: 200px; height: 200px;"></div>
+		</div>
+		</div>
+		
+		
 		
 		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">+ New Project</button>
 		<br>
