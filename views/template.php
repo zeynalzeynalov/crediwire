@@ -21,6 +21,19 @@
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
+        
+        
+        var xmlhttpChart = new XMLHttpRequest();
+        xmlhttpChart.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {       
+                var objArrayPROJECT = JSON.parse(this.responseText);
+                       var array  = JSON.parse(jsonString);
+
+var dataTableData = google.visualization.arrayToDataTable(array);
+        
+        
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Work',     11],
@@ -40,6 +53,13 @@
         alert('hellp chart');
         
         chart.draw(data, options);
+            
+            }
+        }
+        
+        xmlhttpChart.open("GET", "restfulapi/getjson.php/getTotalProjectDurations/, true);
+        xmlhttpChart.send();        
+        
       }
     </script>
     
