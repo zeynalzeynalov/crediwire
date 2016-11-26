@@ -26,26 +26,23 @@
             Loading state
           </button>
 
-          <script>
-            $(document).ready(function(){
 
-                          $('#myButton').on('click', function () {
-              var $btn = $(this).button('loading')
-              // business logic...
-              $btn.button('reset')
-            })
-              
-});
             
 
-          </script>
       </div>
     </div>
   </div>
 </div>
 
 
-
+          <script>
+<script>
+$(document).ready(function(){
+    $(".btn").click(function(){
+        $(this).button('loading');
+    });   
+});
+</script>
 
 <?php foreach ($projects as $project): ?>
 
