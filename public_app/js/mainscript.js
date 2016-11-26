@@ -1,8 +1,3 @@
-$(document).ready(function()
-{
-    document.getElementById("tb-project-title").required = true;
-});
-
 function processAjaxRequest(js_project_id)
 {
     var tmp_js_project_id = js_project_id.split('_');
