@@ -17,28 +17,33 @@
       Password:   A2vfu6M2r5LhhxAdBA63VWCi6U
       URI:        postgres://phueqmfbfolrhb:A2vfu6M2r5LhhxAdBA63VWCi6U@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/dcreosvnjcrc0oHeroku
       CLI:        heroku pg:psql DATABASE_URL --app cready
-      </rep>
+      </pre>
       
       <pre>
-      TABLES:
+      TABLES [2]:
         <b>- project</b>
-        <span>Columns:
-              <b>project_id integer (PK)</b>,
-              project_title character varying,
-              project_created_date date,
-        </span>
+            <span>Columns:
+                  <b>project_id integer (PK)</b>,
+                  project_title character varying,
+                  project_created_date date,
+            </span>
         
         <b>- project_execution_record</b>
-        <span>Columns:
-              <b>project_execution_record_id integer (PK)</b>,
-
-              starting_time_stamp timestamp,
-              ending_time_stamp timestamp,
-              is_completed boolean,
-              project_id integer (FK),
-              final_execution_time bigint,
-        </span>
+            <span>Columns:
+                  <b>project_execution_record_id integer (PK)</b>,
+                  starting_time_stamp timestamp,
+                  ending_time_stamp timestamp,
+                  is_completed boolean,
+                  project_id integer (FK),
+                  final_execution_time bigint,
+            </span>
         
+        FUNCTIONS [2]:
+        <b>check_project_state( project_id integer )</b>
+              Check that indicated project is Closed or Open.
+        
+        <b>get_timestamp_diff( project_id integer )</b>
+              Get time interval between ending and starting time stamps in format of 'HH24:MI:SS'.
         </pre>
       
         
