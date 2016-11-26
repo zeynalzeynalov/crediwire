@@ -85,6 +85,7 @@
                       error.php
                 .htaccess
                 index.php
+        </pre>
         
       </div>
     </div>
