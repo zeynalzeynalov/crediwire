@@ -40,13 +40,9 @@
 		<br>
 		<br>
 		
-		<div class="panel panel-primary">
-		<div class="panel-body">
-		<div class="well" style="background-color: white;">
+
 		<div id="chart_div" style="width: 360px; height: 250px;"></div>
-		</div>
-		</div>
-		</div>
+
 		
 		<br>
 
