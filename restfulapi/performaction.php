@@ -62,7 +62,7 @@
 		project_title, project_created_date)
 		VALUES ('%s', NOW());", $projectTitle);
 		$result_action = pg_query($dbConn, $query_action);
-		pg_close($dbCon);	
+		pg_close($dbConn);	
 		
 		if (!$result_action)
 			echo '[{"message":"New project added!"}]';
