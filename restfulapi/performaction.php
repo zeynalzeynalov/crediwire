@@ -8,7 +8,9 @@
 
       if($_SERVER['REQUEST_METHOD'] != 'GET')
       die("Error: Not a GET request!");
+
       $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
+      $original_request = $request;
 
       function manageProjectTimeRecord($ID)
       {
@@ -78,11 +80,9 @@
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
       $ID = array_shift($request)+0;
 
-echo $ID;
-
 	if(strtoupper($RESOURCE) == strtoupper("manageProjectTimeRecord") && isset($ID))
 		manageProjectTimeRecord($ID);
 	else
 	if(strtoupper($RESOURCE) == strtoupper("addNewProject") && isset($ID))
-		addNewProject($ID);
+		addNewProject($original_request[1]);
 ?>
