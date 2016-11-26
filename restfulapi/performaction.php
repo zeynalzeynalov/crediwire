@@ -67,7 +67,7 @@
 		if (!$result_action)
 			echo '[{"message":"New project added!'.$query_action.'"}]';
 		else
-			echo '[{"message":"Error during project addition '.pg_last_error().'"}]';
+			echo '[{"message":"Error during project addition '.$query_action.'"}]';
 		
 		
 	}
