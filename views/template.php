@@ -39,7 +39,7 @@
             }
         }
         
-        xmlhttpChart.open("GET", "restfulapi/getjson.php/getTotalProjectDurations/, true);
+        xmlhttpChart.open("GET", "restfulapi/getjson.php/getTotalProjectDurations/", true);
         xmlhttpChart.send();        
         
       }
