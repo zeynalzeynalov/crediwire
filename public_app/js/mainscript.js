@@ -60,3 +60,27 @@ function processAjaxRequest(js_project_id)
        $btnStartStop.button('reset');        
     }
 }
+
+
+function processAjaxRequestAddNewProject(newProjectTitle)
+{
+    if (newProjectTitle.length == 0)
+    {
+        return;
+    } 
+    else 
+    {
+        var xmlhttpAddProject= new XMLHttpRequest();
+        xmlhttpAddProject.onreadystatechange = function()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {       
+                var objArrayResult = JSON.parse(this.responseText);
+                document.getElementById("save-result").innerHTML = objArrayResult[0].message;
+            }
+        }
+        
+       xmlhttpAddProject.open("GET", "restfulapi/performaction.php/addNewProject/" + newProjectTitle, true);
+       xmlhttpAddProject.send();  
+    }
+}
