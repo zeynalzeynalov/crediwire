@@ -56,7 +56,6 @@
 
 	function addNewProject($projectTitle)
 	{
-		echo $projectTitle;
 		$dbConn = dbConnection::connectToDB();
 		$projectTitle = pg_escape_string ($dbConn, $projectTitle);
 		
