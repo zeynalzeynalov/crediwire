@@ -60,12 +60,12 @@
 		$query_action = sprintf("
 		INSERT INTO public.project(
 		project_title, project_created_date)
-		VALUES ('%s', NOW();", $projectTitle);
+		VALUES ('%s', NOW());", $projectTitle);
 		$result_action = pg_query($dbConn, $query_action);
 		pg_close($dbConn);	
 		
 		if (!$result_action)
-			echo '[{"message":"New project added!"}]';
+			echo '[{"message":"New project added!'.$query_action.'"}]';
 		else
 			echo '[{"message":"Error during project addition '.pg_last_error().'"}]';
 		
