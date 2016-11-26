@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CrediWire Coding Assignment</a>
+          <a class="navbar-brand" href="https://crediwire.herokuapp.com/">CrediWire Coding Assignment</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -45,7 +45,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://crediwire.herokuapp.com/help.html">Help</a></li>
+            <li><a href="https://crediwire.herokuapp.com/help/main">Help</a></li>
             <li><a href="#">Welcome, <b>Bob!</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
