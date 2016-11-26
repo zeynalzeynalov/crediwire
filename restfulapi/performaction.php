@@ -54,22 +54,25 @@
 
 	function addNewProject($projectTitle)
 	{
+		echo $projectTitle;
 		$dbConn = dbConnection::connectToDB();
 		$projectTitle = pg_escape_string ($dbConn, $projectTitle);
-
+		
+		echo $projectTitle;
+		
 		$query_action = sprintf("
 		INSERT INTO public.project(
 		project_title, project_created_date)
 		VALUES ('%s', NOW());", $projectTitle);
 		$result_action = pg_query($dbConn, $query_action);
-		pg_close($dbConn);	
+			
 		
 		if (!$result_action)
-			echo '[{"message":"New project added!'.$query_action.'"}]';
+			echo '[{"message":"New project added!'.$query_action.pg_last_error().'"}]';
 		else
-			echo '[{"message":"Error during project addition '.$query_action.'"}]';
+			echo '[{"message":"Error during project addition '.$query_action.pg_last_error().'"}]';
 		
-		
+		pg_close($dbConn);
 	}
 
       $RESOURCE = strtoupper(preg_replace('/[^a-z0-9_]+/i','',array_shift($request)));
