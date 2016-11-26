@@ -21,39 +21,21 @@
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
-        
-        
-        var xmlhttpChart = new XMLHttpRequest();
+
+	  var xmlhttpChart = new XMLHttpRequest();
         xmlhttpChart.onreadystatechange = function()
         {
             if (this.readyState == 4 && this.status == 200)
             {       
-                var objArrayPROJECT = JSON.parse(this.responseText);
-                       var array  = JSON.parse(jsonString);
-
-var dataTableData = google.visualization.arrayToDataTable(array);
-        
-        
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-
-        var options = {
-          title: 'My Daily Activities',
-          is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        
-        alert('hellp chart');
-        
-        chart.draw(data, options);
-            
+				var objArrayPROJECT = JSON.parse(this.responseText);
+				var dataTableData = google.visualization.arrayToDataTable(objArrayPROJECT);
+				var options = {
+				title: 'My Daily Activities',
+				is3D: true,
+				};
+				var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+				alert('hellp chart');
+				chart.draw(data, options);
             }
         }
         
