@@ -1,7 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
     RewriteRule    ^(restfulapi)($|/)   - [L]
-    RewriteRule    ^(public_app/images/)($|/)   - [L]
     RewriteRule    ^$    public_app/      [L]
     RewriteRule    (.*)  public_app/$1    [L]
 </IfModule>
