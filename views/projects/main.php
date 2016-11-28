@@ -1,3 +1,34 @@
+<script>
+	// Load the Visualization API and the piechart package.
+	google.charts.load('current', {'packages':['corechart']});
+
+	// Set a callback to run when the Google Visualization API is loaded.
+	google.charts.setOnLoadCallback(drawChart);
+
+	function drawChart()
+	{
+		var jsonData = $.ajax({
+		url: "restfulapi/getjson.php/getTotalProjectDurations/index.php",
+		dataType: "json",
+		async: false
+		}).responseText;
+
+		// Create our data table out of JSON data loaded from server.
+		var data = new google.visualization.DataTable(jsonData);
+
+		var options = {
+		  title: 'Project execution summary %',
+		  is3D: true,
+		  width: 360,
+		  height: 250
+		};
+
+		// Instantiate and draw our chart, passing in some options.
+		var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+</script>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
