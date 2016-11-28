@@ -64,6 +64,8 @@
       URI:        postgres://phueqmfbfolrhb:A2vfu6M2r5LhhxAdBA63VWCi6U@ec2-54-217-213-203.eu-west-1.compute.amazonaws.com:5432/dcreosvnjcrc0oHeroku
       CLI:        heroku pg:psql DATABASE_URL --app cready
 
+      <img src="https://crediwire.herokuapp.com/public_app/images/db_er_diagram.png">
+
       <pre>
       TABLES [2]:
         <b> project</b>
