@@ -1,3 +1,4 @@
+// Javascript function process Ajax client requests according to project ID
 function processAjaxRequest(js_project_id)
 {
     var tmp_js_project_id = js_project_id.split('_');
@@ -29,22 +30,27 @@ function processAjaxRequest(js_project_id)
                         var outputHtml = "";
                         for(var i = 0; i < objArray.length; i++)
                         {
-                            outputHtml += ('<span>' + objArray[i].starting_time_stamp + ' - ' + objArray[i].ending_time_stamp + ' = ' + objArray[i].time_diff_text + '</span><br>');
+                            outputHtml += ('<span class="tiny-font">' + objArray[i].starting_time_stamp + ' - ' + objArray[i].ending_time_stamp + ' = ' + objArray[i].time_diff_text + '</span><br>');
                         }
 
                         document.getElementById("ajaxResponseContainer" + js_project_id).innerHTML = outputHtml;
-              
-
-                        if(document.getElementById("btnAjax_" + js_project_id).value == "Start working")
+                        
+                        var button_value = "";
+                        var button_css   = "";
+                        
+                        if(document.getElementById("btnAjax_" + js_project_id).value.charAt(2) == "a") // "Start working" we check 3rd char to be a or o
                         {
-                            document.getElementById("btnAjax_" + js_project_id).value = "Stop working";
-                            document.getElementById("btnAjax_" + js_project_id).className = "btn btn-danger";
+                            button_value = "Stop working";
+                            button_css = "btn btn-danger";
                         }
                         else
                         {
-                            document.getElementById("btnAjax_" + js_project_id).value = "Start working";
-                            document.getElementById("btnAjax_" + js_project_id).className = "btn btn-success"; 
+                            button_value = "Start working";
+                            button_css = "btn btn-success"; 
                         }
+                        
+                        document.getElementById("btnAjax_" + js_project_id).value = button_value;
+                        document.getElementById("btnAjax_" + js_project_id).className = button_css;
                         
                         drawChart();
                     }
@@ -63,7 +69,7 @@ function processAjaxRequest(js_project_id)
     }
 }
 
-
+// Javascript function Add new project to Database with onClick of button
 function processAjaxRequestAddNewProject(newProjectTitle)
 {
     if (newProjectTitle.length == 0)
