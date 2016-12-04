@@ -77,8 +77,16 @@
 		
 		<br>
 
+		
+		<div class="row">
+		
+		
+		
+		
 		<?php foreach ($projects as $project): ?>
 
+  <div class="col-md-1">
+			
 			<div class="panel panel-primary">
 			<div class="panel-heading">
 			<h3 class="panel-title">Project Name: <?= $project->project_title ?></h3>
@@ -117,7 +125,10 @@
 			</div>
 			</div>
 			<br>
-
+</div>
 		<?php endforeach; ?>
+			
+			</div>
+			
 	</div>
 </div>
