@@ -85,7 +85,7 @@
 		
 		<?php foreach ($projects as $project): ?>
 
-  <div class="col-md-1">
+  <div class="col-md-4">
 			
 			<div class="panel panel-primary">
 			<div class="panel-heading">
