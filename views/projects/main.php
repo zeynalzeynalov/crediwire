@@ -70,22 +70,13 @@
 		
 		<br>
 		<br>
-		
-
 		<div id="chart_div" style="width: 360px; height: 250px;"></div>
-
-		
 		<br>
-
-		
 		<div class="row">
-		
-		
-		
 		
 		<?php foreach ($projects as $project): ?>
 
-  <div class="col-md-4">
+ 		<div class="col-md-4">
 			
 			<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -113,7 +104,7 @@
 
 				<?php foreach ($project->project_execution_record as $timeRecord): ?>
 
-				<span class="tiny-font"><?= $timeRecord->starting_time_stamp ?> - <?= $timeRecord->ending_time_stamp ?> = <?= $timeRecord->time_diff_text ?> </span><br>
+				<span class="tiny-font"><?= $timeRecord->starting_time_stamp ?> - <?= $timeRecord->ending_time_stamp ?> = <?= $timeRecord->time_diff_text ?> </span>
 
 				<?php endforeach; ?>
 
@@ -125,7 +116,7 @@
 			</div>
 			</div>
 			<br>
-</div>
+		</div>
 		<?php endforeach; ?>
 			
 			</div>
