@@ -58,8 +58,7 @@
             FROM public.Project P ORDER BY P.Project_id ASC") or die('Select query failed: ' . pg_last_error());
 
         while ($row = pg_fetch_assoc($results))
-        {
-            
+        {  
             $timeRecordList = [];
 
             $query_select = sprintf("SELECT 
