@@ -48,7 +48,7 @@
 	      
 
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectdetails/".$ID);
+		curl_setopt($ch, CURLOPT_URL, "https://project-mng-app.herokuapp.com/restfulapi/getjson.php/getProjectdetails/".$ID);
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		curl_exec($ch);
 		curl_close($ch);
