@@ -1,4 +1,3 @@
-# crediwire
-Coding assignment
+# Project Management App
 By Zeynal Zeynalov
 https://www.linkedin.com/in/zeynal
