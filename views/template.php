@@ -9,11 +9,11 @@
 
 		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="https://crediwire.herokuapp.com/css/site.css">
+		<link rel="stylesheet" type="text/css" href="https://project-mng-app.herokuapp.com/css/site.css">
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://crediwire.herokuapp.com/js/mainscript.js"></script>
+		<script type="text/javascript" src="https://project-mng-app.herokuapp.com/js/mainscript.js"></script>
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	</head>
 	<body>
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="https://crediwire.herokuapp.com/">CrediWire Coding Assignment</a>
+          <a class="navbar-brand" href="https://project-mng-app.herokuapp.com/">Project timing app</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,17 +37,17 @@
             <li class="dropdown">
           <a href="#" class="btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">API DEMO<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectDetails/1" target="_blank">API - Get Project Details (Project ID = 1)</a></li>
-            <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getProjectTimeRecords/1" target="_blank">API - Get Project Time Records (Project ID = 1)</a></li>
-            <li><a href="https://crediwire.herokuapp.com/restfulapi/performaction.php/addnewproject/Test_Project" target="_blank">API - Add New Project (Title: Test Project)</a></li>
-	    <li><a href="https://crediwire.herokuapp.com/restfulapi/getjson.php/getTotalProjectDurations/index.php" target="_blank">API - Get Pie Chart Data</a></li>            		  
+            <li><a href="https://project-mng-app.herokuapp.com/restfulapi/getjson.php/getProjectDetails/1" target="_blank">API - Get Project Details (Project ID = 1)</a></li>
+            <li><a href="https://project-mng-app.herokuapp.com/restfulapi/getjson.php/getProjectTimeRecords/1" target="_blank">API - Get Project Time Records (Project ID = 1)</a></li>
+            <li><a href="https://project-mng-app.herokuapp.com/restfulapi/performaction.php/addnewproject/Test_Project" target="_blank">API - Add New Project (Title: Test Project)</a></li>
+	    <li><a href="https://project-mng-app.herokuapp.com/restfulapi/getjson.php/getTotalProjectDurations/index.php" target="_blank">API - Get Pie Chart Data</a></li>            		  
           </ul>
         </li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://crediwire.herokuapp.com/help/main">HELP (Documentation)</a></li>
-            <li><a href="https://crediwire.herokuapp.com/">Welcome, <b>Bob!</b></a></li>
+            <li><a href="https://project-mng-app.herokuapp.com/help/main">HELP (Documentation)</a></li>
+            <li><a href="https://project-mng-app.herokuapp.com/">Welcome, <b>Bob!</b></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
