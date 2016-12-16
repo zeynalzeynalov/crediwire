@@ -23,7 +23,7 @@
         Development enviroment: <a href="https://www.heroku.com/" target="_blank">Heroku: Cloud Application Platform</a>
         
         <b>Directory structure:</b>
-            <a href="https://github.com/zeynalzeynalov/crediwire" target="_blank">root/</a>
+            <a href="https://github.com/zeynalzeynalov/project-mng-app" target="_blank">root/</a>
                 config/
                       configuration.php
                 controllers/
