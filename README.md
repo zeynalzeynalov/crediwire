@@ -7,7 +7,11 @@ API module of application also useful for integration posibilities (please use t
 Pattern design is MVC.
 
 Language:     PHP
+
 Markup:       HTML, CSS, Bootstrap 3
+
 Frontend:     Javascript, AJAX, Json, Google charts
+
 Pattern:      MVC
+
 APIs design:  RESTful
