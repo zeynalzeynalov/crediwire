@@ -6,6 +6,8 @@ This demo is working version of project management application app. I tried to u
 API module of application also useful for integration posibilities (please use top API menu to test demo Json API).
 Pattern design is MVC.
 
+Demo: https://project-mng-app.herokuapp.com/
+
 Language:     PHP
 
 Markup:       HTML, CSS, Bootstrap 3
