@@ -17,3 +17,7 @@ Frontend:     Javascript, AJAX, Json, Google charts
 Pattern:      MVC
 
 APIs design:  RESTful
+
+**Database model:**
+
+![DB](https://raw.githubusercontent.com/zeynalzeynalov/project-management-app/master/public_app/images/db_er_diagram.png)
