@@ -8,13 +8,12 @@ Pattern design is MVC.
 
 Demo: https://project-mng-app.herokuapp.com/
 
-Language:     PHP
+Tech stack:
+- PHP
+- HTML, CSS, Bootstrap 3
+- Javascript, AJAX, Json, Google charts
 
-Markup:       HTML, CSS, Bootstrap 3
-
-Frontend:     Javascript, AJAX, Json, Google charts
-
-Pattern:      MVC
+Architecture: MVC
 
 APIs design:  RESTful
 
